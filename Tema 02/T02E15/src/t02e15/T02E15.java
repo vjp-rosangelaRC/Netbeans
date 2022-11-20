@@ -23,12 +23,7 @@ public class T02E15 {
     int minutos = tiempo / 60;
     tiempo = tiempo % 60;
     int segundos = tiempo;
-    
-    
-    
-    
-    
-    // resultado = 2h, 46min y 40 s
+       
     System.out.println("10.000 segundos hacen un total de " + horas + " horas, " + minutos + " minutos y " + segundos + " segundos");
     }
     
