@@ -16,7 +16,7 @@ public class T03E09 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       int n1, n2, n3, n4, n;
+       int n1, n2, n3, n4, n = 0;
        
        Scanner entrada = new Scanner (System.in);
        
@@ -29,19 +29,57 @@ public class T03E09 {
        System.out.println("Por favor, introduzca un cuarto número:");
        n4 = entrada.nextInt();
        //4! = 16
-       if (n1<n2 && n2<n3 && n3<n4){
-           System.out.println(n1+ "," +n2+ "," + n3 + "," +n4);
-       }
-       else {
-            if (n1<n3 && n2<n3 && n3<n4){
-               System.out.println(n1+ "," +n2+ "," + n3 + "," +n4);
-            }
-            else {
-                if (n1<n4 && n2<n3 && n3<n4){
-                    System.out.println(n1+ "," +n2+ "," + n3 + "," +n4);          
-        }
-        } 
+       //rondas=n-1=3
+       if (n1 >  n2){
+           n = n1;
+           n1 = n2;
+           n2 = n;        
        } 
+       if (n2 >  n3){
+           n = n2;
+           n2 = n3;
+           n3 = n;        
+       }
+       if (n3 >  n4){
+           n = n3;
+           n3 = n4;
+           n4 = n;        
+       }
+       //aquí acaba la primera ronda
+       if (n1 >  n2){
+           n = n1;
+           n1 = n2;
+           n2 = n;        
+       } 
+       if (n2 >  n3){
+           n = n2;
+           n2 = n3;
+           n3 = n;        
+       }
+       if (n3 >  n4){
+           n = n3;
+           n3 = n4;
+           n4 = n;        
+       }
+       //aquí acaba la segunda ronda
+       if (n1 >  n2){
+           n = n1;
+           n1 = n2;
+           n2 = n;        
+       } 
+       if (n2 >  n3){
+           n = n2;
+           n2 = n3;
+           n3 = n;        
+       }
+       if (n3 >  n4){
+           n = n3;
+           n3 = n4;
+           n4 = n;        
+       }
+        //aquí acaba la tercera ronda         
+        System.out.println(n1 + "," + n2 + "," + n3 + "," + n4);
+       
        
        
         
