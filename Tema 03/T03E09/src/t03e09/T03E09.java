@@ -78,7 +78,7 @@ public class T03E09 {
            n4 = n;        
        }
         //aquí acaba la tercera ronda         
-        System.out.println(n1 + "," + n2 + "," + n3 + "," + n4);
+        System.out.println(n1 + "-" + n2 + "-" + n3 + "-" + n4);
        
        
        
