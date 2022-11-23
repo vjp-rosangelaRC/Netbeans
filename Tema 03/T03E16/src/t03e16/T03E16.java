@@ -21,12 +21,9 @@ public class T03E16 {
         System.out.println("Los números impares existentes emtre el número 20 y el 160 son:");
                 
         do{
-            if (n%2 == 0) {
+            if (n%2 == 0) { //si es impar
             System.out.print(n + "-");
-            if  (n%2 == 0){  //Si es impar
-                System.out.print(n + "-");
                 contImpares++;
-            }
             }
             n++;
         }while (n <=160);
