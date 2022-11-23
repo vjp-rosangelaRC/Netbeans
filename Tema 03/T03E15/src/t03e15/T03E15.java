@@ -17,13 +17,14 @@ public class T03E15 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner entrada = new Scanner (System.in);
-        int i, num;
+        int i, num, resultado;
         
         System.out.println("Introduzca un número para calcular su tabla de multiplicar:");
         num = entrada.nextInt();
         
         for (i=0; i <11; i++){
-            System.out.println(num + "x" + i);
+            resultado = num *i;
+            System.out.println(num + "x" + i + "=" + resultado);
         }
         
     }

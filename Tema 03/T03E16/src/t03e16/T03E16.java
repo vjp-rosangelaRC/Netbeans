@@ -16,24 +16,22 @@ public class T03E16 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int i, n=20, contImpares = 0;
+        int n=20, contImpares = 0;
         
         System.out.println("Los números impares existentes emtre el número 20 y el 160 son:");
                 
         do{
-            if (n%2 == 0){
-                System.out.println(n);
-            
+            if (n%2 == 0) {
+            System.out.print(n + "-");
             if  (n%2 == 0){  //Si es impar
                 System.out.print(n + "-");
                 contImpares++;
             }
             }
-            
-        n++;
-        }while (n >=160);
+            n++;
+        }while (n <=160);
+      
         System.out.println("\nLa cantidad de números impares impresos ha sido: " + contImpares);
-        
         
         
     }
