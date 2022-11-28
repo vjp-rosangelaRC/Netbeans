@@ -5,6 +5,7 @@
  */
 package t03e17;
 import java.util.Scanner;
+import java.lang.*;
 /**
  *
  * @author rdlrosac01
@@ -17,13 +18,16 @@ public class T03E17 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner entrada = new Scanner (System.in);
-        int numero;
-        float raizCuadrada;
+        double numero;
+        double raizCuadrada;
         
-        System.out.println("Por favor, introduzca un número: ");
-        numero = entrada.nextInt();
+        do{
+            System.out.println("Por favor, introduzca un número: ");
+            numero = entrada.nextInt();
+            System.out.println("Por favor, introduzca un número válido.");
+        }while (numero <= 0);
+        System.out.println("La raíz cuadrada de " + numero + " es " + Math.sqrt(numero));
         
-        Math.sqrt(numero)= raizCuadrada;
         
         
         
