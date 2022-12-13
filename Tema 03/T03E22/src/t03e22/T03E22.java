@@ -5,6 +5,7 @@
  */
 package t03e22;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -18,24 +19,43 @@ public class T03E22 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner teclado = new Scanner (System.in); 
-        double numero1, numero2, resultado;
-        
-        System.out.println("Introduzca el primero número:");
-        numero1 = teclado.nextInt();
-        System.out.println("Introduzca el segundo número:");
-        numero2 = teclado.nextInt();
-        
-        try{
-            resultado = numero1 + numero2;
+        Scanner entrada = new Scanner (System.in);
+        int numero, numero2, resultado;
+        boolean error;
+        do{
+            error = false;
+            try{
+            System.out.println("Número 1:");
+            numero = entrada.nextInt();
+            }
+            catch(InputMismatchException e){
+                System.out.println("Error");
+                numero = 0;
+                error = true;
+                entrada.next();
+            }
+        }while(error);
+        do{
+            error = false;
+            try{
+            System.out.println("Número 2:");
+            numero2 = entrada.nextInt();
+            }
+            catch(InputMismatchException e){
+                System.out.println("Error");
+                numero2 = 0;
+                error = true;
+                entrada.next();
+            }
+        }while(error);
+        resultado = numero + numero2;
+        System.out.println("El resultado es " +resultado);
             
-        }
-        catch (ArithmeticException e){
-            System.out.println("Error. No es un número");
-            numero1 = 0;
-            numero2 = 0;
-        }
-        System.out.println("Resultado: " + resultado);
+            
+           
+        
     }
     
 }
+    
+
