@@ -39,11 +39,15 @@ public class T04E13 {
     
     public static int output (){
         int i, numero;
-        numero = mayorQueUno();
-        for(i=1;i<=numero;i++){
+        boolean num;
+        numero = pedirN();
+        num = mayorQueUno();
+        if (num = true) {
+            for(i=1;i<=numero;i++){
             if ((i % 3)==0){
                System.out.println(i);
             }
+        }
         }
         return numero;
     }
