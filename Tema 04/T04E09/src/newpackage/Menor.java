@@ -11,7 +11,7 @@ package newpackage;
  */
 public class Menor {
     public static void menorQue (int n1, int n2, int n3){
-        //No consigo que pida el número
+        
         if (n1 < n2 && n1 < n3) { 
             System.out.println("El número menor de los introducidos es " + n1);
         }
