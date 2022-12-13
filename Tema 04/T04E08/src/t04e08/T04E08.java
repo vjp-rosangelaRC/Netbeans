@@ -21,7 +21,7 @@ public class T04E08 {
         Scanner entrada = new Scanner (System.in);
         System.out.println("Por favor, indique una cantidad de dinero:");
         int importeTotal = 0, importe = entrada.nextInt();
-        t04e08.Billetes.Billetera(importeTotal, importe);
+        Billetes.Billetera(importeTotal, importe);
     }
     
 }
