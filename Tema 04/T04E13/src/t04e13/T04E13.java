@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package t04e13;
-
 import java.util.Scanner;
 
 /**
@@ -16,6 +15,7 @@ public class T04E13 {
     /**
      * @param args the command line arguments
      */
+    
     public static int pedirN (){
         Scanner entrada = new Scanner(System.in);
         System.out.println("Introduzca el primer número:");
@@ -51,15 +51,11 @@ public class T04E13 {
         }
         return numero;
     }
-     
-    
     public static void main(String[] args) {
         // TODO code application logic here
         int numero, i; 
         numero = output();
         System.out.println("Los números son " + numero);
-        
-        ///aaaaaa
     }
     
 }
