@@ -16,6 +16,7 @@ public class T03E06 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        //Hay otra correccion
         Scanner entrada;
         entrada = new Scanner(System.in);
         System.out.println("Por favor, introduzca un número:");
