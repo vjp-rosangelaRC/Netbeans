@@ -23,7 +23,6 @@ public class T04E14 {
     }
     
     public static boolean mayorQueCero(int numero){
-        Scanner teclado = new Scanner(System.in);
         boolean mayor =true;
 
         if  (numero < 0){
@@ -37,20 +36,27 @@ public class T04E14 {
     }
     
     public static int multiplosTres (int numero){
-        
         int i, contador=0;
+            
+        if  (numero < 1){
+                System.out.print("Error. El número debe ser mayor que 1.");
+                numero = pedirN();
+        }
         
-
+        //Mostramos todos los números comprendidos entre 1 y num
         for(i=1;i<=numero;i++){
             if ((i % 3)==0){
                System.out.println(i);
                contador++;
             }
+   
         }
             System.out.println("Contador: " + contador);
         return numero;
     }
      
+     
+    
     public static void main(String[] args) {
         // TODO code application logic here
         int numero;

@@ -24,51 +24,39 @@ public class T04E13 {
     }
     
     public static boolean mayorQueUno(int numero){
-    boolean mayor =true;
-    Scanner teclado = new Scanner(System.in);
-    numero = pedirN();
-    while (numero <= 1){
-            System.out.print("Introduce numero mayor que 1: ");
-            numero = teclado.nextInt();
-            if  (numero < 1){
-                mayor = false;
-                System.out.print("Error. El número debe ser ayor que 1. ");
-            }
-            else{
-                mayor = false;
-            }
+        boolean mayor =true;
+
+        if  (numero < 1){
+            mayor = false;
+            System.out.print("Error. El número debe ser mayor que 0.");
+            numero = pedirN();
         }
-    return mayor;
+        else{
+            mayor = true;
+        }
+        return mayor;
     }
     
-    public static int output (){
-        int i, numero;
-        boolean num;
-        
-        numero = pedirN();
-        num = mayorQueUno(numero);
-        
-        if (num = true) {
-            for(i=1;i<=numero;i++){
+    public static int output (int numero){
+        int i;
+                
+        for(i=1;i<=numero;i++){
             if ((i % 3)==0){
                System.out.println(i);
             }
         }
-        }
+            
         return numero;
     }
     public static void main(String[] args) {
         // TODO code application logic here
-        int numero, i; 
+        int numero;
         boolean mayor;
-    
-        do{
-            numero = pedirN();
-            mayor = mayorQueUno(numero);
-        }while (mayor = false);
-        
-        numero = output();
-        System.out.println("Los números son " + numero);
+        numero = pedirN();
+        mayor = mayorQueUno(numero);
+        if (mayor = true){
+            System.out.println(output(numero));
+        }
     }
     
 }
