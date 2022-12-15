@@ -18,7 +18,7 @@ public class T04E13 {
     
     public static int pedirN (){
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Introduzca el primer número:");
+        System.out.print("Introduzca un número:");
         int n = entrada.nextInt();
         return n;
     }
@@ -40,10 +40,8 @@ public class T04E13 {
     public static int output (int numero){
         int i;
                 
-        for(i=1;i<=numero;i++){
-            if ((i % 3)==0){
+        for(i=1;i<numero;i++){
                System.out.println(i);
-            }
         }
             
         return numero;

@@ -20,6 +20,8 @@ public class T03E27 {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
         int numero1, numero2, opcion, resultado;
+        
+        do{
         System.out.println("N1:");
         numero1 = entrada.nextInt();
         System.out.println("N2:");
@@ -31,7 +33,6 @@ public class T03E27 {
         System.out.println("Pulse 4");
         System.out.println("Pulse 5");
         opcion = entrada.nextInt();
-        do{
             switch (opcion){
                 case 1:{
                     resultado = numero1 + numero2;
@@ -66,14 +67,6 @@ public class T03E27 {
                     System.out.println("Incorrecto");
                 }
             }
-            }while (opcion != 5);
-                }    
-        
-        
-        
-        
-        
-        
-    
-   
+        }while (opcion != 5);
+    }          
 }
