@@ -20,10 +20,10 @@ public class T04E20 {
     public static String DescubridorAmerica = "Colon";
     
     
-    public static void pregunta1(){
+    public static boolean pregunta1(){
     Scanner entrada = new Scanner (System.in);
     String respuesta1, respuesta2;
-    int puntuacion=0;
+    boolean puntuacion;
     boolean iguales;
         
     System.out.println("Examen de cultural general");    
@@ -34,16 +34,19 @@ public class T04E20 {
     
     if (iguales == true){
         System.out.println("Respuesta correcta.");
+        puntuacion = true;
     }
     else {
         System.out.println("Respuesta incorrecta. La respuesta correcta es: " + CapitalEspanha);
+        puntuacion = false;
     }
+    return puntuacion;
     }
     
     public static void pregunta2(){
     Scanner entrada = new Scanner (System.in);
     String respuesta1, respuesta2;
-    int puntuacion;
+    int puntuacion = 0;
     boolean iguales;
         
     System.out.println("¿Quién decubrió América?");
@@ -52,25 +55,28 @@ public class T04E20 {
     
     if (iguales == true){
         System.out.println("Respuesta correcta.");
-        puntuacion = 1;
+        puntuacion++;
     }
     else {
         System.out.println("Respuesta incorrecta. La respuesta correcta es: " + DescubridorAmerica);
-        puntuacion = 0;
+        puntuacion--;
     }
     }
     
     public static void main(String[] args) {
         // TODO code application logic here
-    int puntuacion=0;
+    int puntuacionFinal = 0;
     
     pregunta1();
-    if ()
+    if (puntuacion == true){
+        puntuacionFinal = +5;
+    }
     pregunta2();
+    if (puntuacion == true){
+        puntuacionFinal = +5;
+    }
     
-    
-    
-     System.out.println("Nota del examen:" + puntuacion);
+    System.out.println("Nota del examen:" + puntuacionFinal);
     
     }
     
