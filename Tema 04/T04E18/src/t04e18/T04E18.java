@@ -23,20 +23,19 @@ public class T04E18 {
         nombre = entrada.nextLine();
         return nombre;
 }
-    public static String nombreCincoVeces (String nombre){
+    public static void nombreCincoVeces (String nombre){
         int i;
-        
-        for(i=1; i<5; i++){
+        for(i=1; i<6; i++){
             System.out.println(nombre);
         }
-        return nombre;
+        
     }
     
     public static void main(String[] args) {
         // TODO code application logic here
         String nombre;
         nombre = pedirNombre();
-        System.out.println(nombreCincoVeces(nombre));
+        nombreCincoVeces(nombre);
     }
     
 }

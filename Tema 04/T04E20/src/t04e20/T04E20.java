@@ -32,7 +32,7 @@ public class T04E20 {
     
     iguales = CapitalEspanha.equalsIgnoreCase(respuesta1);
     
-    if (iguales == true){
+    if (iguales){
         System.out.println("Respuesta correcta.");
         puntuacion = true;
     }

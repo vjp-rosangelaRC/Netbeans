@@ -76,10 +76,10 @@ public class T04E15 {
     public static void main(String[] args) {
         // TODO code application logic here
         int numero1, numero2, opcion, resultado;
-        
-        do{
         numero1 = pedirN();
         numero2 = pedirN();
+        
+        do{
         
         System.out.println("Menú: ");
         System.out.println("Pulse 1");
