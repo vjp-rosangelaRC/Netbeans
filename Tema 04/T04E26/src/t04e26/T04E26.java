@@ -26,19 +26,14 @@ public class T04E26 {
     }
     
     public static boolean esPrimo (int numero){
-        int resultado;
+        int resultado=1, i=2;
         boolean primo = true; 
         
-        while (resultado == 0){
-            
+        while (i <= numero && resultado != 0){
+            resultado = numero /i ;
+            i++;
         }
         
-        for (i = 2; i < numero; i++){
-        resultado = numero / i;
-            if (resultado != 0){
-                primo = true;            
-            }
-        }
     
         return primo;
     }
