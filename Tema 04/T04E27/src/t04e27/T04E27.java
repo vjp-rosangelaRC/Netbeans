@@ -34,25 +34,27 @@ public class T04E27 {
         else {
             result = "cruz"; 
         }
-    return result;
+        return result;
     }
     
     
      
     public static void main(String[] args) {
         // TODO code application logic here
-        String inputUsuario;
+        String inputUsuario, resultado;
         boolean iguales =false;
+        int cont = 0;
         
         while (!iguales){
             System.out.println("¿Cara o cruz?");
             inputUsuario = respuestaMoneda();
-            String resultado = monedaAleatoria();
+            cont++;
+            resultado = monedaAleatoria();
             System.out.println("Ha salido " + resultado);
 
             iguales = resultado.equalsIgnoreCase(inputUsuario);
             if (iguales) {
-                System.out.println("Enhorabuena");
+                System.out.println("Enhorabuena"+cont);
             }
             else {
                 System.out.println("Ha perdido. Pruebe de nuevo:");
