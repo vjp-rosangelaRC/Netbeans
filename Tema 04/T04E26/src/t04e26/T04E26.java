@@ -29,12 +29,12 @@ public class T04E26 {
         int resultado=1, i=2;
         boolean primo = true; 
         
-        while (i <= numero && resultado != 0){
-            resultado = numero /i ;
+        while (i <= numero && primo == true){
+            if (numero%1 == 0){
+                primo =false;
+            }
             i++;
         }
-        
-    
         return primo;
     }
     

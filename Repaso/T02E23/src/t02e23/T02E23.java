@@ -20,10 +20,10 @@ public class T02E23 {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
         int cantidad;
-        double precio, resultado;
+        float precio, resultado;
        
         System.out.println("Por favor, introduzca el precio del modelo de ordenador que desea comprar:");
-        precio = entrada.nextDouble();
+        precio = entrada.nextFloat();
         System.out.println("¿Cuántas unidades quiere llevarse?");
         cantidad = entrada.nextInt();
         resultado = precio * cantidad;

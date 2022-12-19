@@ -19,13 +19,13 @@ public class T02E27 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner entrada = new Scanner (System.in);
-        int n1, doble;
+        int n1, cuadrado;
         
         System.out.println("Por favor, introduzca un número:");
         n1 = entrada.nextInt(); 
         
-        doble = n1 * 2;
-        System.out.println("El doble de " + n1 + " es: " + doble);
+        cuadrado = n1 * n1;
+        System.out.println("El doble de " + n1 + " es: " + cuadrado);
         
         System.out.println("El cubo de " +n1 + " es " + (n1 * 3));
         
