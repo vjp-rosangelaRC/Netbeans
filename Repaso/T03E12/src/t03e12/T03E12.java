@@ -16,10 +16,12 @@ public class T03E12 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int numero = 0;
+        int numero = 11;
         
         do{
+            if (numero%2 == 0){
             System.out.println(numero);
+            }
             numero++;
         }while (numero < 134);
    
