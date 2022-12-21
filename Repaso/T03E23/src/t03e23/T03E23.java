@@ -20,22 +20,20 @@ public class T03E23 {
         // TODO code application logic here
         Scanner entrada = new Scanner (System.in);
         
-        int numero, i=1;
+        int numero;
         
         System.out.println("Introduzca un número:");
         numero = entrada.nextInt();
             
-        do {
-                        
-            if (numero <= 1){
-                System.out.println("Introduzca otro número");
-                numero = entrada.nextInt();
-            }     
-            
+        while (1 >= numero) {
+            System.out.println("Introduzca otro número");
+            numero = entrada.nextInt();                   
+        }
+        
+        for (int i=1; i <= numero; i++){
             System.out.println(i);
-            i++;
-            
-        }while (i <= numero);
+        }
+        
         
     }
     
