@@ -57,8 +57,8 @@ public class Test {
     coche3.establecerRueda(rueda2);
     
     // Mostrar datos 
-        System.out.println("El coche 1 es de la marca " + coche1.obtenerMarca() + ", su modelo es " + coche1.obtenerModelo() + ", su material de rueda es " + rueda1.obtenerMaterial() + " y el tamaño de su rueda es " + rueda1.obtenerPulgadas());
-        System.out.println("El coche 2 es de la marca " + coche2.obtenerMarca() + ", su modelo es " + coche2.obtenerModelo() + ", su material de rueda es " + rueda1.obtenerMaterial() + " y el tamaño de su rueda es " + rueda1.obtenerPulgadas());
-        System.out.println("El coche 3 es de la marca " + coche3.obtenerMarca() + ", su modelo es " + coche3.obtenerModelo() + ", su material de rueda es " + rueda2.obtenerMaterial() + " y el tamaño de su rueda es " + rueda2.obtenerPulgadas());
+        System.out.println("El coche 1 es de la marca " + coche1.obtenerMarca() + ", su modelo es " + coche1.obtenerModelo() + ", su material de rueda es " + coche1.obtenerRueda().obtenerMaterial()+ " y el tamaño de su rueda es " + coche1.obtenerRueda().obtenerPulgadas());
+        System.out.println("El coche 2 es de la marca " + coche2.obtenerMarca() + ", su modelo es " + coche2.obtenerModelo() + ", su material de rueda es " + coche2.obtenerRueda().obtenerMaterial() + " y el tamaño de su rueda es " + coche2.obtenerRueda().obtenerPulgadas());
+        System.out.println("El coche 3 es de la marca " + coche3.obtenerMarca() + ", su modelo es " + coche3.obtenerModelo() + ", su material de rueda es " + coche3.obtenerRueda().obtenerMaterial() + " y el tamaño de su rueda es " + coche3.obtenerRueda().obtenerPulgadas());
     }
 }
