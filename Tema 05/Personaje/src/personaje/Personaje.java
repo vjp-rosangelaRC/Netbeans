@@ -53,11 +53,5 @@ public class Personaje {
         System.out.println("El nombre del personaje es " + personaje.getNombre() + ", su fuerza es " + personaje.getFuerza() + " y su nivel es " + personaje.getNivel() + ".");
         
     }
-    
-    
-    /*
-      Para probar el programa, en el main os creareis un objeto de tipo personaje y le daremos valores a sus atributos a partir de los setters y mostrareis dichos valores haciendo uso de los getters.
-
-  Un saludo.
-    */
+   
 }
