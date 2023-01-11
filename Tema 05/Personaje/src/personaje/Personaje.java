@@ -38,11 +38,10 @@ public class Personaje {
         nivel = _nivel;
     }
     
-
-    
     public static void main(String[] args) {
         // TODO code application logic here
         Personaje personaje = new Personaje();
+        
         String nombre = "pepe";
         int fuerza = 5, nivel = 3;
         

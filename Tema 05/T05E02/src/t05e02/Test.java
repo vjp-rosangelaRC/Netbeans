@@ -14,6 +14,7 @@ public class Test {
     public static void main(String[] args){
         Curso curso1 = new Curso();
         Curso curso2 = new Curso();
+        
         curso1.establecerNombreyHoras("pepe",12);
         curso2.establecerNombreyHoras("Juan",2);
         
