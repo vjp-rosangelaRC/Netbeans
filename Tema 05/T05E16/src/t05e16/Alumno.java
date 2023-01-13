@@ -4,67 +4,46 @@
  * and open the template in the editor.
  */
 package t05e16;
+import java.util.Scanner;
 
 /**
  *
- * @author Ross
+ * @author rdlrosac01
  */
 public class Alumno {
-    private String nombre;
-    private int nota;
 
-    public Alumno(String nombre, int nota) {
-        this.nombre = nombre;
-        this.nota = nota;
-        this.checkNota();
-    }
+    /**
+     * @param args the command line arguments
+     */
+    String nombre;
+    int nota;
 
     public String getNombre() {
+        Scanner entrada = new Scanner(System.in);
+        nombre = entrada.next(nombre);
         return nombre;
     }
 
+    public void setNombre(String nombre) {        
+        this.nombre = nombre;        
+    }
+
     public int getNota() {
+        Scanner entrada = new Scanner(System.in);
+        nota = entrada.nextInt();
+        do {
+            System.out.println("Introduca una nota válida");
+            nota = entrada.nextInt();
+        }while ( nota < 0 && nota > 10);
         return nota;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setNota(int nota) {
-        this.nota = nota;
-    }
-    
-    public void checkNota(){
-        if(this.nota <0 || this.nota > 10){
-            System.out.println("Constructor: La nota de "+ this.nombre +" no es válida.");
-        }
-    }
-    
-    public String getCalificacion(){
-        String result = "";
-        if(this.nota >= 0 && this.nota <= 4){
-            result = this.nombre +": Suspenso";
-        }else{
-            switch(this.nota){
-                    case(5):
-                    case(6):
-                        result = this.nombre +": Bien";
-                        break;
-                    case(7):
-                    case(8):
-                        result = this.nombre +": Notable";
-                        break;
-                    case(9):
-                    case(10):
-                        result = this.nombre +": Sobresaliente";
-                        break;
-                    default:
-                        result = this.nombre +": La nota no es válida";
-                        break;
-            }
-        }
-        return result;
+        this.nota = nota;        
+    }  
+       
+    public static void main(String[] args) {
+        // TODO code application logic here
     }
     
 }
