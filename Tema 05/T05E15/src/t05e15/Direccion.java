@@ -19,6 +19,24 @@ public class Direccion {
     private int piso;
     private String ciudad; 
 
+    // Faltan los constructores, que se crean debajo de los atributos
+    /*
+    public Direccio(){
+        calle = ";
+        numero = 0;
+        piso = 0;
+        ciudad="";
+    }
+    Este sería el constructor por defecto. 
+    El parametrizado ↓ 
+    public Direccio(String calle, int numero, int piso, String ciudad){
+        this.calle = "";
+        this.numero = 0;
+        this.piso = 0;
+        this.ciudad="";
+    */
+    
+    
      // Setters y getters 
     public String getCalle() {
         return calle;
@@ -51,8 +69,8 @@ public class Direccion {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
-    
-    
+    /*
+    abajo del todo se inserta el toString, que nos genera un método toString que, si me creo una cirección, me muestra la dirección con el método toString*/
     
     public static void main(String[] args) {
         // TODO code application logic here

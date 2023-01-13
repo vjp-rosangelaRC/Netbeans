@@ -18,7 +18,7 @@ public class Test {
         
         
         
-        // Empleado 1
+    // Empleado 1
     /*System.out.println("Empleado 1:");
     System.out.println("Nombre:" + empleado1.getNombre());
     System.out.println("Salario:" + empleado2.getSalario());
@@ -93,6 +93,8 @@ public class Test {
     empleado3.setDireccion(direccion3);   
 
     //Muestro datos
-        System.out.println("" + empleado1.mostrarDatos());
+    // System.out.println("" + empleado1.mostrarDatos());
+    
+    //Para mostrarlo se hace en DIreccion en el to String 
     }
 }

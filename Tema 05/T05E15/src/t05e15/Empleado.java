@@ -14,6 +14,30 @@ public class Empleado {
     private int salario;
     private Direccion direccion;
 
+    // Hacemos el constructor por defecto
+    public Empleado() {
+        this.nombre = nombre;
+        this.salario = salario;
+        this.direccion = new Direccion();
+    }
+    // También podemos poner a null un objeto, para indicar que no quiero crearme este elmento por defecto. 
+    
+    
+    // Faltaba el constructor. Se hace atomáticamene, es el parametrizado
+    public Empleado(String nombre, int salario, Direccion direccion) {
+        this.nombre = nombre;
+        this.salario = salario;
+        this.direccion = direccion;
+    }  
+    /*
+    //Se podría crear otro constructor con la información más desglosada:
+    public Empleado(String nombre, int salario, String calle, int numero, int piso, String ciudad) {
+        this.nombre = nombre;
+        this.salario = salario;
+        this.direccion = new Direccion(calle, numero, piso, ciudad);  //Esto debería salir automático, no a mano
+    }
+    */
+    
     // Setters y getters 
     
     public String getNombre() {
@@ -39,7 +63,6 @@ public class Empleado {
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
-    
     
     
 }
