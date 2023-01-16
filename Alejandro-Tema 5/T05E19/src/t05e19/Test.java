@@ -22,6 +22,7 @@ public class Test {
         System.out.println(empleado3.toString());
         System.out.println(empleado4.toString());
         System.out.println(empleado5.toString());
-
+        //Así se pone el toString dentro del main
+        // System.out.println("" + ;empleado1.toString();)
     }
 }

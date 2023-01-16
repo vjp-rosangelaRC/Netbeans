@@ -9,6 +9,18 @@ package t05e19;
  *
  * @author Ross
  */
+
+//Si incluyo calcular tarifas dentro de la clase empleado lo puedo ejecutar para cada objeto de la clase empleado
+/* public void calcularTarifas(){
+int totalTarfica, restoHoras;
+if (horas <=40){
+totalTarifa = tarifa * horas;
+sout ("su tarifa" + totalTarifa);
+}
+else {
+restoHoras = horas % 40;
+totalTarifa = (int) ((tarifa*1.5)*(restoHoras)+(horas- ...)
+}*/
 public class Empleado {
     private String nombre;
     private int horas;

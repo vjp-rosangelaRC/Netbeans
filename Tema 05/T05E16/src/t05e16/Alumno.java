@@ -15,9 +15,11 @@ public class Alumno {
     /**
      * @param args the command line arguments
      */
-    String nombre;
-    int nota;
-
+    // Falta el private 
+    private String nombre;
+    private int nota;
+    
+// Faltan los constructores
     public String getNombre() {
         Scanner entrada = new Scanner(System.in);
         nombre = entrada.next(nombre);
