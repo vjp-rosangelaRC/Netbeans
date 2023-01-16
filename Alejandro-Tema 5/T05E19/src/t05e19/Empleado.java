@@ -70,5 +70,6 @@ public class Empleado {
         return this.nombre + " trabajo " + this.horas + " horas, cobra " + this.tarifa +
                 " euros la hora por lo que le corresponde un sueldo de " + this.getSueldo() + " euros.";
     }
+    // Empleado1.toString y lo pongo dentro de un sout. 
     
 }
