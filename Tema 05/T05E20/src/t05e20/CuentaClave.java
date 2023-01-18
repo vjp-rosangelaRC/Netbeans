@@ -40,15 +40,21 @@ public class CuentaClave extends Cuenta{
         
     //Sobreescribir el método extraer. Solo se puede extrar si hay saldo fuciente
     //No funciona porque saldo es privado
+    // Para sobreescribir un método se usa @Override. Para sobreescribir el nombre dede ser igual
+    @Override
     public void extraer(float dinero){
-        if (getSaldo() > dinero){
+        if (getSaldo() >= dinero){
             // De esta manera no funciona
             // this.saldo = this.saldo - dinero;
             setSaldo(getSaldo() - dinero); 
+            super.extraer(dinero);
         }
         /*else{
             System.out.println("No hay saldo suficiente.");
         }*/
     } 
+    // Podemos usar super para reutilizar el código del método de la clase padre
+    /* super.extraer(); 
+    y me ejecuta el extraer de la clase principal*/ 
 } 
     
