@@ -20,6 +20,17 @@ public class Alumno {
     private int nota;
     
 // Faltan los constructores
+    
+    public Alumno() {
+        this.nombre = "";
+        this.nota = 0;
+    }
+
+    public Alumno(String nombre, int nota) {
+        this.nombre = nombre;
+        this.nota = nota;
+    }
+
     public String getNombre() {
         Scanner entrada = new Scanner(System.in);
         nombre = entrada.next(nombre);
@@ -43,6 +54,11 @@ public class Alumno {
     public void setNota(int nota) {
         this.nota = nota;        
     }  
+
+    @Override
+    public String toString() {
+        return "Alumno{" + "nombre=" + nombre + ", nota=" + nota + '}';
+    }
        
     public static void main(String[] args) {
         // TODO code application logic here

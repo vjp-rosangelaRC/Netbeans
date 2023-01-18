@@ -16,8 +16,8 @@ public class Empleado {
 
     // Hacemos el constructor por defecto
     public Empleado() {
-        this.nombre = nombre;
-        this.salario = salario;
+        this.nombre = "";
+        this.salario = 0;
         this.direccion = new Direccion();
     }
     // También podemos poner a null un objeto, para indicar que no quiero crearme este elmento por defecto. 
@@ -62,6 +62,11 @@ public class Empleado {
 
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado\n" + "Nombre:" + nombre + "\n Salario:" + salario + "\n Direccion" + direccion;
     }
     
     

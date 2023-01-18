@@ -96,5 +96,7 @@ public class Test {
     // System.out.println("" + empleado1.mostrarDatos());
     
     //Para mostrarlo se hace en DIreccion en el to String 
+        System.out.println(direccion1.toString());
+        System.out.println(empleado3.toString());
     }
 }

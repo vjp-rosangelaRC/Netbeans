@@ -71,6 +71,11 @@ public class Direccion {
     }
     /*
     abajo del todo se inserta el toString, que nos genera un método toString que, si me creo una cirección, me muestra la dirección con el método toString*/
+
+    @Override
+    public String toString() {
+        return "Direccion:\n\t Calle:" + calle + "\n\t Piso:" + numero + "\n\t Piso" + piso + "\n Ciudad:" + ciudad;
+    }
     
     public static void main(String[] args) {
         // TODO code application logic here

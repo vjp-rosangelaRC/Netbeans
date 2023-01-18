@@ -5,19 +5,51 @@
  */
 package t05e16;
 
+import java.util.Scanner;
+
 /**
  *
  * @author rdlrosac01
  */
 public class Test {
-    
-    public static void calificaciones(){
-        int nota = getNota();
-        
+
+    public static String pedirNombre() {
+        Scanner entrada = new Scanner(System.in);
+        String nombre;
+        System.out.println("Introduce nombre");
+        nombre = entrada.nextLine();
+        return nombre;
     }
-    
+
+    public static int pedirNota() {
+        Scanner entrada = new Scanner(System.in);
+        int nota;
+        System.out.println("Introduce nota");
+        nota = entrada.nextInt();
+        return nota;
+    }
+
+    public static void mostrarNota(Alumno alumnoAuxiliar) {
+        System.out.print("Alumno: " + alumnoAuxiliar.getNombre());
+        switch (alumnoAuxiliar.getNota()) {
+            case 0:
+            case 4:
+                System.out.println("Suspenso");
+                break;
+            case 5:
+            // etc
+        }
+
+    }
+
     public static void main(String[] args) {
-        Alumno alumno1 = new Alumno();
+
+        /* 
+        Alumno alumno1 = new Alumno("Julia", 8);
+        Alumno alumno2 = new Alumno("Mari Carmen", 5);
+        Alumno alumno3 = new Alumno("Elena", 9);
+        
+        System.out.println(alumno1.toString());
         // También se puede hacer 
         // Alumno alumno2 = new Alumno ("Pepe", 6);
         
@@ -40,5 +72,25 @@ public class Test {
         1.getNota() = nota;
         mostrasrNotas(nota);
     }
-    
+         */ String nombre;
+        int nota;
+
+        Alumno alumno1 = new Alumno();
+        Alumno alumno2 = new Alumno();
+        Alumno alumno3 = new Alumno();
+        System.out.println("Alumno 1:");
+        nombre = pedirNombre();
+
+        do {
+            nota = pedirNota();
+            if (nota < 0 || nota < 10) {
+                System.out.println("Nota no valida");
+            }
+
+        } while (nota < 0 || nota > 10);
+
+        alumno1.setNombre(nombre);
+        alumno1.setNota(nota);
+        mostrarNota(alumno1);
+    }
 }

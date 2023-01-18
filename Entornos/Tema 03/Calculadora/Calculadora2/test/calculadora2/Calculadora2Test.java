@@ -114,5 +114,17 @@ public class Calculadora2Test {
         // TODO review the generated test code and remove the default call to fail.
         //fail("Error multiplicación");
     }
+
+    /**
+     * Test of main method, of class Calculadora2.
+     */
+    @Test
+    public void testMain() {
+        System.out.println("main");
+        String[] args = null;
+        Calculadora2.main(args);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
     
 }
