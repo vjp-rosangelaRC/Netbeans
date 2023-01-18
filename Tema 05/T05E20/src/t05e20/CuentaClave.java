@@ -22,17 +22,29 @@ public class CuentaClave extends Cuenta{
     }
     
     //Constructor parametrizado
-    CuentaClave(int saldo, int clave){
+    CuentaClave(float saldo, int clave){
         super(saldo);
         this.clave = clave;
     }
     
+    // Tengo que crear un método para establecer la clave dentro de la 
+    //clase principal. Uso los getters y setters para eso. 
+    //Setters y getters de Clave
+    public int getClave() {
+        return clave;
+    }
+
+    public void setClave(int clave) {
+        this.clave = clave;
+    }
+        
     //Sobreescribir el método extraer. Solo se puede extrar si hay saldo fuciente
     //No funciona porque saldo es privado
     public void extraer(float dinero){
         if (getSaldo() > dinero){
-            this.saldo = this.saldo - dinero;
-            // setSaldo(getSaldo() - dinero); 
+            // De esta manera no funciona
+            // this.saldo = this.saldo - dinero;
+            setSaldo(getSaldo() - dinero); 
         }
         /*else{
             System.out.println("No hay saldo suficiente.");

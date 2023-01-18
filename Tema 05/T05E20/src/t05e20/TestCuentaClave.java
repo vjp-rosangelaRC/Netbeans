@@ -38,39 +38,47 @@ public class TestCuentaClave { //Falta parte del ejercicio
                     System.out.println("Se ha creado su cuenta vacía");
                     System.out.println("Escoja una clave");
                     clave = entrada.nextInt();
+                    cuenta1.setClave(clave);
+                    System.out.println("Se ha creado su clave.");
                     break;
                 }
 
                 // El usuario introduce un saldo inicial
                 case 2: {
-                    float saldoInicial = entrada.nextFloat();
-                    System.out.println("Introduzca un saldo para crear cuenta:");
-                    cuenta1 = new CuentaClave(saldoInicial);
-                    System.out.println("Se ha creado su cuenta con un saldo inicial de " + saldoInicial);
                     System.out.println("Escoja una clave");
                     clave = entrada.nextInt();
+                    System.out.println("Se ha creado su clave.");
+                    System.out.println("Introduzca un saldo para crear cuenta:");
+                    float saldoInicial = entrada.nextFloat();
+                    cuenta1 = new CuentaClave(saldoInicial, clave);
+                    System.out.println("Se ha creado su cuenta con un saldo inicial de " + saldoInicial);
                     break;
                 }
 
                 //Ingresar dinero 
                 case 3: {
                     if (cuenta1 != null) {
-                        System.out.println("Introduzca su clave:");
-                        claveIntroducida = entrada.nextInt();
-                        if (clave == claveIntroducida) {
-                            float dinero = entrada.nextFloat();
-                            System.out.println("Introduza el monto que quiere ingresar:");
-                            cuenta1.ingresar(dinero);
-                            System.out.println("Se han ingresado " + dinero + " con éxito.");
-                        } else {
-                            System.out.println("La clave no es correcta. Pruebe de nuevo");
-                        }
+                        do {
+                            System.out.println("Introduzca su clave:");
+                            claveIntroducida = entrada.nextInt();
+                            if (cuenta1.getClave() == claveIntroducida) {
+                                float dinero = entrada.nextFloat();
+                                System.out.println("Introduza el monto que quiere ingresar:");
+                                cuenta1.ingresar(dinero);
+                                System.out.println("Se han ingresado " + dinero + " con éxito.");
+                            } 
+                            else {
+                                System.out.println("La clave no es correcta");
+                            }
+                        } while (cuenta1.getClave() != claveIntroducida);
+                        System.out.println("Se ha introducido su clave.");
                     } else {
                         System.out.println("No existe la cuenta. Cree una cuenta antes.");
                     }
                     break;
                 }
-
+                
+                // Faltaría aquí poner lo de la clave en el resto.
                 // Extraer dinero
                 case 4: {
                     if (cuenta1 != null) {
