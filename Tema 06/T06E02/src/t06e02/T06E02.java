@@ -30,11 +30,24 @@ public class T06E02 {
     
     public static void mostrarDatos (int vector[]){
         int i;
+        
+        System.out.println("Los números introducidos son: ");
+        
         for (i = 0; i < 7; i++){
-            System.out.println("Los números introducidos son: ");
             System.out.println(vector[i]);
         }
     }
+    
+    public static void intercambiarOrden (int vector []){
+        int aux;
+        aux= vector[2];
+        vector[2] = vector[4];
+        vector[4] = aux;
+        
+        
+        mostrarDatos(vector);
+    }
+    
     
     public static void main(String[] args) {
         // TODO code application logic here
@@ -42,6 +55,7 @@ public class T06E02 {
         
         pedirN(vector);
         mostrarDatos(vector);
+        intercambiarOrden(vector);
         
     }
     
