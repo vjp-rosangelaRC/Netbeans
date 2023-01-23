@@ -16,21 +16,19 @@ public class T06E03 {
     /**
      * @param args the command line arguments
      */
-    public static int rellenarVector(int vector[]) {
+    public static void rellenarVector(int vector[]) {
         int i;
 
         for (i = 0; i < vector.length; i++) {
             vector[i] = (int) (Math.random() * 6 + 1);
-            System.out.println(vector[i]);
         }
-        return vector[i];
     }
 
     public static void mostrarVector(int vector[]) {
         int i;
 
         for (i = 0; i < vector.length; i++) {
-            System.out.println(vector[i]);;
+            System.out.println(vector[i]);
         }
     }
 
@@ -46,9 +44,9 @@ public class T06E03 {
             } catch (Exception e) {
                 System.out.println(e);
                 System.out.println("Introduzca un número entero");
-            } finally {
+            } /* finally {
                 entrada.nextLine();
-            }
+            } */
             if (longitud < 1 || longitud > 10) {
                 System.out.println("Introduzca un número válido");
             }
@@ -75,21 +73,22 @@ public class T06E03 {
                 switch (opcionMenu) {
                     case 1: {
                         rellenarVector(vector);
+                        System.out.println("aaa" + vector[0]);
                         mostrarVector(vector);
+                        break;
                     }
-                    break;
-
+                    
                     case 2: {
                         int[] vector2 = new int[longitudUsuario()];
                         rellenarVector(vector2);
                         mostrarVector(vector2);
+                        break;
                     }
-                    break;
-
+                    
                     case 3: {
                         System.out.println("Saliendo...");
+                        break;
                     }
-                    break;
 
                     default: {
                         System.out.println("Introduzca un número válido.");
