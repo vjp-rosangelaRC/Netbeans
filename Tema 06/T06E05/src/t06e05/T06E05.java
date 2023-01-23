@@ -40,7 +40,16 @@ public class T06E05 {
     }
     
     public static void mostrarValoresMayor (int array[][]){
+        int i, j;
+        System.out.println("Los valores ordenados de mayor a menor:");
         
+        for (i = 0; i < array.length; i ++){
+            for (j = 0; j < array[i].length; j++){
+                if (array[i][j] > array[i][j]){
+                    System.out.println( array[i][j]);
+                }
+            }
+        }
     }
     
     public static void mostrarValoresMenor (int array[][]){

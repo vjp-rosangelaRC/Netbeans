@@ -22,7 +22,7 @@ public class T06E02 {
         int i;
 
         System.out.println("Introduzca un número entero");
-        for (i = 0; i < 7; i++) {
+        for (i = 0; i < vector.length; i++) {
             System.out.println("Introduzca el número " + (i + 1) + ":");
             vector[i] = entrada.nextInt();
         }
@@ -33,18 +33,16 @@ public class T06E02 {
 
         System.out.println("Los números introducidos son: ");
 
-        for (i = 0; i < 7; i++) {
+        for (i = 0; i < vector.length; i++) {
             System.out.println(vector[i]);
         }
     }
 
     public static void intercambiarOrden(int vector[]) {
         int aux;
-        aux = vector[2];
-        vector[2] = vector[4];
-        vector[4] = aux;
-        System.out.println("Ahora, con los datos cambiados,");
-        mostrarDatos(vector);
+        aux = vector[1];
+        vector[1] = vector[3];
+        vector[3] = aux;
     }
 
     public static void main(String[] args) {
@@ -54,6 +52,8 @@ public class T06E02 {
         pedirN(vector);
         mostrarDatos(vector);
         intercambiarOrden(vector);
+        System.out.println("Ahora, con los datos cambiados,");
+        mostrarDatos(vector);
 
     }
 

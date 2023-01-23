@@ -13,6 +13,8 @@ import java.util.Scanner;
  */
 public class T06E01 {
 
+    // Faltaría un método rellenar vector (al que se le puede añadir un int posicion para el sout 
+    
     public static void pedirN(int vector[]) {
         Scanner entrada = new Scanner(System.in);
         

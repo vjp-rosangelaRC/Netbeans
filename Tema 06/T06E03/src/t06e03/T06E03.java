@@ -44,10 +44,11 @@ public class T06E03 {
             } catch (Exception e) {
                 System.out.println(e);
                 System.out.println("Introduzca un número entero");
+                longitud = -1; //Le doy un valor -1 para que siga pidiendo longitud
             } /* finally {
-                entrada.nextLine();
+                entrada.nextLine(); //Esto limpia el buffer
             } */
-            if (longitud < 1 || longitud > 10) {
+            if (longitud < 1 || longitud > 10) { //Esto sobra un poco
                 System.out.println("Introduzca un número válido");
             }
 
@@ -73,7 +74,6 @@ public class T06E03 {
                 switch (opcionMenu) {
                     case 1: {
                         rellenarVector(vector);
-                        System.out.println("aaa" + vector[0]);
                         mostrarVector(vector);
                         break;
                     }
