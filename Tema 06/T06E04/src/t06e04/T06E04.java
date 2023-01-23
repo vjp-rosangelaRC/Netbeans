@@ -26,7 +26,7 @@ public class T06E04 {
     }
     public static void main(String[] args) {
         // TODO code application logic here
-        int vector[] = new int 
+        int vector[] = new int [0]; 
     }
     
 }
