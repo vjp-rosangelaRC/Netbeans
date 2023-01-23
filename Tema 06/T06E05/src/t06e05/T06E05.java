@@ -5,6 +5,8 @@
  */
 package t06e05;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Ross
@@ -14,8 +16,50 @@ public class T06E05 {
     /**
      * @param args the command line arguments
      */
+    public static void introducirNumeros(int array[][]) {
+        Scanner entrada = new Scanner(System.in);
+        int i, j;
+
+        System.out.println("Introduzca valores:");
+
+        for (i = 0; i < array.length; i++) {
+            for (j = 0; j < array[i].length; j++) {
+                array[i][j] = entrada.nextInt();
+            }
+        }
+    }
+    
+    public static void mostrarValores (int array[][]){
+        int i, j;
+        System.out.println("Los valores introducidos son:");
+        for (i = 0; i < array.length; i ++){
+            for (j = 0; j < array[i].length; j++){
+                System.out.println( array[i][j]);
+            }
+        }
+    }
+    
+    public static void mostrarValoresMayor (int array[][]){
+        
+    }
+    
+    public static void mostrarValoresMenor (int array[][]){
+        
+    }
+    
+    public static void mostrarValoresSuma (int array[][]){
+        
+    }
+    
     public static void main(String[] args) {
         // TODO code application logic here
+    int [][] array = new int[4][2];
+    introducirNumeros(array);
+    mostrarValores(array);
+    mostrarValoresMayor(array);
+    mostrarValoresMenor(array);
+    mostrarValoresSuma(array);
+    
     }
     
 }

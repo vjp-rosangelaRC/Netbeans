@@ -17,9 +17,9 @@ public class T06E04 {
     public static void numerosAleatorios(int array[][]) {
         int i, j;
 
-        for (i = 0; i <= array.length; i++) {
-            for (j = 0; j <= array[i].length; j++) {
-                array[i][j] = (int) (Math.random() * 100 + 1); //Da error
+        for (i = 0; i < array.length; i++) {
+            for (j = 0; j < array[i].length; j++) {
+                array[i][j] = (int) (Math.random() * (200 - 100) + 101); 
             }
         }
     }
@@ -27,13 +27,15 @@ public class T06E04 {
     public static void mostrarPares(int array[][]) {
         int i, j;
 
-        for (i = 0; i <= array.length; i++) {
-            for (j = 0; j <= array[i].length; j++) {
-                System.out.println("Los números pares son: " + array[i][j]);
+        for (i = 0; i < array.length; i++) {
+            for (j = 0; j < array[i].length; j++) {
+                if (array[i][j] % 2 == 0) {
+                    System.out.println("Los números pares son: " + array[i][j]);
+                }
             }
         }
     }
-    
+
     public static void main(String[] args) {
         // TODO code application logic here
         int[][] array = new int [4][3]; 
