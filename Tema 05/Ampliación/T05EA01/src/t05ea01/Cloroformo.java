@@ -24,8 +24,8 @@ public class Cloroformo extends Armas {
     }
     
     //Constructor parametrizado con Armas
-    public Cloroformo(int tiempoEfectivo, boolean disponible, int numArmas, String tipo) {
-        super(disponible, numArmas, tipo);
+    public Cloroformo(int tiempoEfectivo, boolean disponible, int numArmas) {
+        super(disponible, numArmas);
         this.tiempoEfectivo = tiempoEfectivo;
     }
     

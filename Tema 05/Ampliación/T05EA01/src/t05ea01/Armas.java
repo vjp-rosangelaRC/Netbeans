@@ -13,20 +13,19 @@ package t05ea01;
 public class Armas {
     private boolean disponible;
     private int numArmas;
-    private String tipo;
     
     // Constructor por defecto
     public Armas() {
         this.disponible = true;
         this.numArmas = 0;
-        this.tipo = null;
+        
     }
     
     // Constructor parametrizado
-    public Armas(boolean disponible, int numArmas, String tipo) {
+    public Armas(boolean disponible, int numArmas) {
         this.disponible = disponible;
         this.numArmas = numArmas++;
-        this.tipo = tipo;
+       
     }
     
     // Getters y setters
@@ -46,14 +45,6 @@ public class Armas {
     public void setNumArmas(int numArmas) {
         this.numArmas = numArmas;
     }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
     
     // Método para usar el arma
     public static void usarArma(String tipo, boolean disponible){
@@ -72,7 +63,7 @@ public class Armas {
 
     @Override
     public String toString() {
-        return "Armas{" + "disponible=" + disponible + ", numArmas=" + numArmas + ", tipo=" + tipo + '}';
+        return "Armas{" + "disponible=" + disponible + ", numArmas=" + numArmas;
     }
     
 }

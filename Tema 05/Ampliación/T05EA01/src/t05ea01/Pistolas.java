@@ -24,8 +24,8 @@ public class Pistolas extends Armas {
     }
     
     //Constructor parametrizado con Armas
-    public Pistolas(int balasMaximas, boolean disponible, int numArmas, String tipo) {
-        super(disponible, numArmas, tipo);
+    public Pistolas(int balasMaximas, boolean disponible, int numArmas) {
+        super(disponible, numArmas);
         this.balasMaximas = balasMaximas;
     }
     

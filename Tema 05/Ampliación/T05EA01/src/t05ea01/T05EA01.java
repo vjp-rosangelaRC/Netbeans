@@ -18,7 +18,7 @@ public class T05EA01 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Armas arma1 = new Armas (true, 2, "Escopeta");
+        Armas arma1 = new Armas (true, 2);
         // No muestra  nada
         arma1.toString();
         
@@ -26,7 +26,6 @@ public class T05EA01 {
         Armas arma2 = new Armas();
         arma2.setDisponible(true);
         arma2.setNumArmas(1);
-        arma2.setTipo("Cuchillo");
         arma2.toString();
         
         
@@ -40,6 +39,8 @@ public class T05EA01 {
         Pistolas pistola = new Pistolas (6);
         pistola.toString();
         System.out.println("" + pistola);
+        
+        MenuNuevaArma.menu();
         
     }
     

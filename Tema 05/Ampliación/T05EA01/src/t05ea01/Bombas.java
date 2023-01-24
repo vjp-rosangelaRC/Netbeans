@@ -27,8 +27,8 @@ public class Bombas extends Armas {
     }
     
     // Constructor parametrizado con clase principals
-    public Bombas(int alcance, boolean distancia, boolean disponible, int numArmas, String tipo) {
-        super(disponible, numArmas, tipo);
+    public Bombas(int alcance, boolean distancia, boolean disponible, int numArmas) {
+        super(disponible, numArmas);
         this.alcance = alcance;
         this.distancia = distancia;
     }
