@@ -12,19 +12,22 @@ package t05ea01;
 
 public class Armas {
     private boolean disponible;
-    private int numArmas;
+    private static int numArmas = 0;
+    
+    // Tendría que ser estático e inicializarlo aquí
     
     // Constructor por defecto
+    // Como numArmas es estático aquí no tengo que meterlo, ya está inicializado pero
+    // sí uso este constructor para incrementar el numArmas
     public Armas() {
         this.disponible = true;
-        this.numArmas = 0;
-        
+        numArmas++;
     }
     
     // Constructor parametrizado
     public Armas(boolean disponible, int numArmas) {
         this.disponible = disponible;
-        this.numArmas = numArmas++;
+        numArmas++;
        
     }
     
@@ -47,16 +50,20 @@ public class Armas {
     }
     
     // Método para usar el arma
-    public static void usarArma(String tipo, boolean disponible){
+    public static void usarArma(boolean disponible){
         if (disponible == true){
-            quitarSeguro(tipo);
-            System.out.println("Quitando seguro de " + tipo);
+            quitarSeguro();
+            System.out.println("Utilizando arma");
         }
     }
     
+    /* Aquí me olvidé de quitar lo de tipo. Para lo del seguro de todos modos habría que 
+    sobreescribirlo dentro de las clases hijas para editar el mensaje. Dentro de las clases
+    hijas se usa el super además para poder hacerlo*/
+    
     // Metodo para quitar el seguro
-    public static void quitarSeguro(String tipo){
-        System.out.println("Quitando el seguro de " + tipo);
+    public static void quitarSeguro(){
+        System.out.println("Quitando el seguro");
     }
     
     //toString

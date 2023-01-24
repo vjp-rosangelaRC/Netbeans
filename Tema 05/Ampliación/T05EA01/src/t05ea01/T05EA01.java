@@ -22,23 +22,22 @@ public class T05EA01 {
         // No muestra  nada
         arma1.toString();
         
-        //No muestra nada el toString()
+        System.out.println("Armas disponibles: ");
+        
         Armas arma2 = new Armas();
         arma2.setDisponible(true);
-        arma2.setNumArmas(1);
-        arma2.toString();
+        System.out.println(arma2.toString());
         
         
         //Creando un arma de cada tipo
-        Bombas bomba = new Bombas (0, true);
-        bomba.toString();
+        Bombas bomba = new Bombas (0, true, true, 0);
+        System.out.println(bomba.toString());;
         
         Cloroformo cloroformo1 = new Cloroformo(30);
-        cloroformo1.toString();
+        System.out.println(cloroformo1.toString());
         
         Pistolas pistola = new Pistolas (6);
-        pistola.toString();
-        System.out.println("" + pistola);
+        System.out.println( pistola.toString());
         
         MenuNuevaArma.menu();
         

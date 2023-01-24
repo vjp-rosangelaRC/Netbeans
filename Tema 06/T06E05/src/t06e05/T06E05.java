@@ -24,17 +24,18 @@ public class T06E05 {
 
         for (i = 0; i < array.length; i++) {
             for (j = 0; j < array[i].length; j++) {
-                array[i][j] = entrada.nextInt();
+                array[i][j] = entrada.nextInt(); // Ideal método pedir número
             }
         }
     }
     
     public static void mostrarValores (int array[][]){
         int i, j;
+        
         System.out.println("Los valores introducidos son:");
         for (i = 0; i < array.length; i ++){
             for (j = 0; j < array[i].length; j++){
-                System.out.println( array[i][j]);
+                System.out.println(array[i][j]);
             }
         }
     }
@@ -63,6 +64,7 @@ public class T06E05 {
     public static void main(String[] args) {
         // TODO code application logic here
     int [][] array = new int[4][2];
+    
     introducirNumeros(array);
     mostrarValores(array);
     mostrarValoresMayor(array);

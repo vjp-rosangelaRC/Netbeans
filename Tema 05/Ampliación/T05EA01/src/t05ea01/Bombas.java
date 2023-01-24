@@ -20,13 +20,15 @@ public class Bombas extends Armas {
         this.distancia = true;
     }
     
+    /*
     // Constructor parametrizado solo Bombas
     public Bombas(int alcance, boolean distancia) {
         this.alcance = alcance;
         this.distancia = distancia;
-    }
+    }*/
     
     // Constructor parametrizado con clase principals
+    // Aquí debería solo tener disponible, pero da error
     public Bombas(int alcance, boolean distancia, boolean disponible, int numArmas) {
         super(disponible, numArmas);
         this.alcance = alcance;

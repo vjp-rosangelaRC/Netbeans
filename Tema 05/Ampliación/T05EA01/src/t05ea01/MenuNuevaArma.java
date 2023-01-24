@@ -20,8 +20,7 @@ public class MenuNuevaArma {
         String opcion, opcionSi = "si", opcionNo = "no";
         boolean booleano = true, distancia, disponible;
         //Solo se puede crear un arma de cada tipo
-        // El menú no sale usando el booleano
-        // El booleano de 
+        // La opción de distancia
         do {
             System.out.println("M   E   N   Ú:");
             System.out.println("¿Desea crear una nueva arma?");
@@ -47,17 +46,10 @@ public class MenuNuevaArma {
                         } else {
                             distancia = false;
                         };
+                        
+                        disponible = true;
 
-                        System.out.println("¿Está disponible?");
-                        opcion = entrada.nextLine();
-
-                        if (opcion.equalsIgnoreCase(opcionSi)) {
-                            disponible = true;
-                        } else {
-                            disponible = false;
-                        }
-
-                        numArmas++;
+                        /* numArmas++;*/
                         Bombas bomba = new Bombas(alcance, distancia, disponible, numArmas);
                         System.out.println("Ha creado una bomba con éxito");
                         break;
@@ -69,17 +61,10 @@ public class MenuNuevaArma {
                         tiempoEfectivo = entrada.nextInt();
                         cloroformo.setTiempoEfectivo(tiempoEfectivo);
 
-                        System.out.println("¿Está disponible?");
-                        opcion = entrada.nextLine();
-
-                        if (opcion.equalsIgnoreCase(opcionSi)) {
-                            disponible = true;
-                        } else {
-                            disponible = false;
-                        };
+                        disponible = true;                        
                         cloroformo.setDisponible(disponible);
 
-                        numArmas++;
+                        /* numArmas++;*/
                         System.out.println("Ha creado una cloroformo con éxito");
                         break;
                     }
@@ -91,17 +76,11 @@ public class MenuNuevaArma {
                         balasMaximas = entrada.nextInt();
                         pistola.setBalasMaximas(balasMaximas);
 
-                        System.out.println("¿Está disponible?");
-                        opcion = entrada.nextLine();
-
-                        if (opcion.equalsIgnoreCase(opcionSi)) {
-                            disponible = true;
-                        } else {
-                            disponible = false;
-                        };
+                        
+                        disponible = true;                     
                         pistola.setDisponible(disponible);
 
-                        numArmas++;
+                        /*numArmas++;*/
                         System.out.println("Ha creado una pistola con éxito");
                         break;
                     }
@@ -114,7 +93,7 @@ public class MenuNuevaArma {
             } else {
                 if (opcion.equalsIgnoreCase(opcionNo)) {
                     opcionMenu = 4;
-                    System.out.println("Ha creado" + numArmas + " armas");
+                    System.out.println("Ha creado " + numArmas + " armas");
                 }
             };
 
