@@ -82,7 +82,9 @@ public class Cuenta {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        Cuenta cuenta1 = new Cuenta("Pepe", 15);
+        ingresar(15);
+        retirar(10);
         
     }
     
