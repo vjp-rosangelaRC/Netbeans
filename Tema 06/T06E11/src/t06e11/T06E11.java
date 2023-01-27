@@ -40,7 +40,8 @@ public class T06E11 {
         }
     }
     
-    
+    /* La búsqueda lineal siempre es igual tener en cuenta que se usa un bucle while siemper
+    si uso un for obligo a que busque todos los números, no es lo que quiero*/
     public static void main(String[] args) {
         // TODO code application logic here
         int[] vector = new int[10];
