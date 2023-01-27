@@ -27,33 +27,47 @@ public class T06E08 {
                 
         for (int i = 0; i < array.length; i++){
             array[i] = numeroUsuario;           
-        }
-        System.out.println(array);
+        }        
     }
     
     public static int [] arrayAlReves (int numeroUsuario, int array []){
         crearArrayconN(numeroUsuario, array);
         
+        /*Otra opcion sería */
+        int aux;
+        aux = array[1];
+        array[1] = array[5];
+        array[5] = aux;
+        
+        aux = array [2];
+        array [2] = array [4];
+        array[4] = aux;
+        
+        /*Opción 2 (no funciona)*/
+         /*
         for (int j = array.length; j > array.length; j--){
             System.out.println("");
-        }
-        System.out.println(array);
-        return array;
+        }*/         
+        return array;      
     }
     
     
-    /* public static void mostrarN (int array[]){
-        System.out.println("El número escrito al revés es : " + arrayAlReves(array));
-    }*/
+    public static void mostrarN (int array[]){
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
     
     public static void main(String[] args) {
         // TODO code application logic here
         int[] array = new int[5];
         int numeroUsuario = pedirN();
         
-        crearArrayconN(numeroUsuario,array);
-        arrayAlReves(numeroUsuario, array);       
-       /* mostrarN(array);*/
+        
+        crearArrayconN(numeroUsuario, array);
+        arrayAlReves(numeroUsuario, array);
+        System.out.println("El array a la inversa es:");
+        mostrarN(array);
     }
-    
+
 }
