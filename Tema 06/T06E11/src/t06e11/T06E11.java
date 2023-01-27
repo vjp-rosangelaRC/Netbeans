@@ -23,12 +23,23 @@ public class T06E11 {
         }
     }
     
+    /*Necesitaria en este caso un método de generar aleatorio y otro que compruebe que 
+    el número no esta en el vector. Cuando no está repetido lo inserto en el vector, si 
+    está repetido genero un aleatorio nuevamente. 
+    Dentro del comrpobar aleatorio neceitaría un bucle do while para comrpobar que el 
+    número no está repetido y si lo está vuelvo a iniciar el bucle. NEcesito un booleano
+    para controlar el repetido; cuando el repetido false ya paso a almacenar el número 
+    generado.  
+    Para que no falle este ejercicio necesito que Java, que inicializa automáticamente al 
+    0, por eso necesito meter un -1 a todas las celdas, así parto de -1 y no de cero y no 
+    me da problemas*/
     
     public static void mostrarVector (int [] vector){
         for (int i = 0; i < vector.length; i++) {
             System.out.println(vector[i]);
         }
     }
+    
     
     public static void main(String[] args) {
         // TODO code application logic here

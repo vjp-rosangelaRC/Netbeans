@@ -18,7 +18,7 @@ public class T06E10 {
         int i;
 
         for (i = 0; i < vector.length; i++) {
-            vector[i] = (int) (Math.random() * 10 + 1);
+            vector[i] = (int) (Math.random() * 8 + 1); //Esto mejor también en un método aparte
         }
     }
     
@@ -28,6 +28,9 @@ public class T06E10 {
         }
     }
     
+    // Habría que crear un método de booleano que valga true si el número está repetido y
+    //false si no está repetido. SI el booleano es true hay que cambiarlo a cero. 
+    // Mirar la correción de Quique
     public static void repetidosACero(int[] vector) { //No funciona, salen todos a cero de ambos modos
         //Forma 1
         /* for (int i = 0; i < vector.length; i++) {
