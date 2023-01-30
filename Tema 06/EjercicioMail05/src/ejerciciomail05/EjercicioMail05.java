@@ -33,6 +33,8 @@ public class EjercicioMail05 {
                 // System.out.println("El valor generado es: " + vector[i]);
         }
     }
+    
+    public static void 
 
     public static void main(String[] args) {
         // TODO code application logic here
@@ -40,6 +42,8 @@ public class EjercicioMail05 {
         rellenarVector(vector);
         int[] vector2 = new int[10];
         todosAMenos1(vector2);
+        
+        
     }
 
 }
