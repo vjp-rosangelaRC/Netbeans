@@ -31,10 +31,14 @@ public class EjercicioMail02 {
     
     public static void main(String[] args) {
         // TODO code application logic here
+        // Char es comilla única, String es doble comilla. Aquí sería usar un char. 
         String [] abecedario = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
         String suma = "";
                 
         int posicionAbecedario;
+        
+        // El bucle correcto sería un while, no un do while. Habría que sacar lo de la 
+        // posicion fuera. Es while porque pedimos la misma condición dos veces, mejor while
         
         do {
             posicionAbecedario = pedirN();

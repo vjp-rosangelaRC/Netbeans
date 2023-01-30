@@ -38,10 +38,10 @@ public class T06EjercicioMail01 {
         return suma;
     }
     
-    public static int mediaVectores (int [] vector){
-        int media = 0;
+    public static float mediaVectores (int [] vector){
+        float media = 0F;
         
-        media = sumarVectores(vector) / MAX;    
+        media = (float) (sumarVectores(vector) / MAX);    
         //System.out.println("La media es " + media);
         return media;
     }              
@@ -52,7 +52,7 @@ public class T06EjercicioMail01 {
     
     rellenarVector(vector);
     int suma = sumarVectores(vector);
-    int media = mediaVectores(vector);
+    float media = mediaVectores(vector);
         System.out.println("La suma es " + suma);
         System.out.println("La media" + media);   
     }

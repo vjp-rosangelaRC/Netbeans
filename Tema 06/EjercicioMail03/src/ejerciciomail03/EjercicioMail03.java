@@ -17,6 +17,7 @@ public class EjercicioMail03 {
      * @param args the command line arguments
      */
     public static int pedirN(){
+        // Bucle do while para comprobar que el usuario mete número válido
         Scanner entrada = new Scanner(System.in);
         int n = entrada.nextInt();
         return n;
@@ -28,15 +29,13 @@ public class EjercicioMail03 {
     }
     
     public static void rellenarVector(int [] vector){
-        int i;
-        
-        for (i = 0; i < vector.length; i++){
+                
+        for (int i = 0; i < vector.length; i++){
             vector [i] = generarAleatorio();
             // System.out.println("El valor generado es: " + vector[i]);
         } 
     }
-   
-    
+    // Método pedirdígito con un do while para controlar que sean dígitos correctos del 1 al 10. 
     public static void mostrarVector(int[] vector){
         System.out.println("¿Digito final?");
         int n = pedirN();
@@ -52,8 +51,7 @@ public class EjercicioMail03 {
         }       
         
     }
-    
-    
+        
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("¿Tamaño del vector?");
