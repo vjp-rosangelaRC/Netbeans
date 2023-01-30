@@ -23,18 +23,25 @@ public class EjercicioMail05 {
         
         for (int i = 0; i < vector.length; i++) {
             vector[i] = generarAleatorio();
-            // System.out.println("El valor generado es: " + vector[i]);
+            //System.out.println("El valor generado es: " + vector[i]);
         }
     }
     
     public static void todosAMenos1 (int[] vector ) {
         for (int i = 0; i < vector.length; i++) {
                 vector[i] = -1;
-                // System.out.println("El valor generado es: " + vector[i]);
+                //System.out.println("El valor generado es: " + vector[i]);
         }
     }
     
-    public static void 
+    public static void paresMayores (int [] vector, int [] vector2){
+        for (int i = 0; i < vector.length; i++){
+            if ((vector[i] % 2 == 0) && vector[i]>25){
+                vector2[i] = vector[i];
+                System.out.println(vector2[i]);
+            }
+        }
+    }
 
     public static void main(String[] args) {
         // TODO code application logic here
@@ -42,6 +49,9 @@ public class EjercicioMail05 {
         rellenarVector(vector);
         int[] vector2 = new int[10];
         todosAMenos1(vector2);
+        System.out.println("Los pares mayores de 25 son:");
+        paresMayores(vector, vector2);
+        
         
         
     }
