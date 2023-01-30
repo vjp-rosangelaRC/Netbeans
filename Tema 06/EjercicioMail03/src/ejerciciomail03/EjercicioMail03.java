@@ -27,16 +27,15 @@ public class EjercicioMail03 {
         return aleatorio;
     }
     
-    public static int[] rellenarVector(int [] vector){
+    public static void rellenarVector(int [] vector){
         int i;
         
         for (i = 0; i < vector.length; i++){
             vector [i] = generarAleatorio();
             // System.out.println("El valor generado es: " + vector[i]);
         } 
-        
-        return vector;
     }
+   
     
     public static void mostrarVector(int[] vector){
         System.out.println("¿Digito final?");
