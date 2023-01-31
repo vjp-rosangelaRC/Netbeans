@@ -19,7 +19,8 @@ public class EjercicioMail04 {
        
     public static boolean sonIguales(int [] vector, int [] vector2){
         boolean iguales = true;
-        
+        // No es el ideal, mejor sería un bucle while, se usa siempre este para
+        //búsquedas 
         for (int i = 0; i < vector.length; i++){
             if (vector[i] != vector2[i]){
                 iguales = false;

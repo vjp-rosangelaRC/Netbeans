@@ -34,6 +34,8 @@ public class EjercicioMail05 {
         }
     }
     
+    // Habría que ir insertando el vector en la posición 0 y así, no en la misma
+    // Habría que crear int j y hacer j++ 
     public static void paresMayores (int [] vector, int [] vector2){
         for (int i = 0; i < vector.length; i++){
             if ((vector[i] % 2 == 0) && vector[i]>25){
@@ -42,12 +44,13 @@ public class EjercicioMail05 {
             }
         }
     }
-
+    //Tendría que mostrar también el bucle inicial: como inicializo todos a -1 
+    //Hago un while que hasta que llegue a -1 muestre el vector2
     public static void main(String[] args) {
         // TODO code application logic here
         int[] vector = new int[10];
         rellenarVector(vector);
-        int[] vector2 = new int[10];
+        int[] vector2 = new int[10]; //Aqui habría que poner v.lenght 
         todosAMenos1(vector2);
         System.out.println("Los pares mayores de 25 son:");
         paresMayores(vector, vector2);
