@@ -74,7 +74,6 @@ public class T06E14 {
     public static String [] diasSemana (){
         String [] dia= {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
         
-        
         return dia;
     }
     
