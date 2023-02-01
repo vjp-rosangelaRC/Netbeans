@@ -49,10 +49,11 @@ public class T06E14 {
         return media;
     }
     
-    public static void masCalurosos(int[][] temperaturas){
+    public static void masCalurosos(int[][] temperaturas, String [] dia){
         int [][] mayor = new int [temperaturas.length][temperaturas.length] ; 
         mayor[0][0] = temperaturas[0][0];
         
+        //Sacar el más caluroso
         for(int i = 0; i < temperaturas.length;i++){
             for (int j= 0; j < temperaturas[i].length; j++){
                 if (mayor[i][j] < temperaturas[i][j]){
@@ -60,11 +61,23 @@ public class T06E14 {
                 }
             }
         }
-        System.out.println("" + mayor);
+        
+        //Sacar el día de la semana
+        //i es la semana 
+        // j es el día
+        
+        
+        System.out.println("El " + dia + " de la semana " + " con " + mayor + " grados.");
         
     }
     
-    public static void menuSeleccionar(int opcionUsuario, int[][] temperaturas, int suma) {
+    public static String [] diasSemana (){
+        String [] dia= {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
+        
+        return dia;
+    }
+    
+    public static void menuSeleccionar(int opcionUsuario, int[][] temperaturas, int suma, String [] dia) {
 
         switch (opcionUsuario) {
             case 1: {
@@ -84,7 +97,11 @@ public class T06E14 {
             }
             case 4: {
                 System.out.println("El día o días más calurosos fueron:");
-                masCalurosos(temperaturas);
+                masCalurosos(temperaturas, dia);
+                break;
+            }
+            case 5: {
+                System.out.println("Saliendo...");
                 break;
             }
             
@@ -104,10 +121,10 @@ public class T06E14 {
         System.out.println("5. Salir del programa.");
     }
 
-    public static void menu(int opcionUsuario, int[][] temperaturas, int suma) {
+    public static void menu(int opcionUsuario, int[][] temperaturas, int suma, String [] dia) {
 
         do {
-            menuSeleccionar(opcionUsuario, temperaturas, suma);
+            menuSeleccionar(opcionUsuario, temperaturas, suma, dia);
         } while (opcionUsuario != 5);
 
     }
@@ -121,7 +138,6 @@ public class T06E14 {
         /*menuTexto();
         int opcionUsuario = entrada.nextInt();
         menu(opcionUsuario, temperaturas, suma);
-        //Se crea un bucle infinito con la opción 1
         */
         
         
@@ -131,8 +147,9 @@ public class T06E14 {
         /*int suma = mostrarTemperatura(temperaturas);
                 
         temperaturaMedia(suma, temperaturas);*/
+        String [] dia = diasSemana();
         
-        masCalurosos(temperaturas);
+        masCalurosos(temperaturas, dia);
     }
 
 }
