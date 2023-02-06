@@ -29,7 +29,8 @@ public class T07E01 {
         return media;        
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) { //Aquí entendí mal el ejercicio, pide que hagamos un for para rellenar. Dentro 
+        //del método rellenar se pone un String con los nombres de las asignaturas y hay que usar el getter y setter tb 
         // TODO code application logic here
         Notas[] vector = new Notas [6]; 
         int n1, n2, n3, n4, n5, n6, suma;      
