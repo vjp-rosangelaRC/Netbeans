@@ -30,7 +30,7 @@ public class T07E08 {
         String n;
         
         n = entrada.nextLine();
-        return n; 
+        return n; //aaa
     }
     
     public static void menuGeneral(){
