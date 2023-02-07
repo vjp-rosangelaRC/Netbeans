@@ -20,7 +20,7 @@ public class T07E07 {
 
     public static int generarTempAleatorio() {
         int aleatorio;
-        aleatorio = (int) ((Math.random() * 30) + 1);
+        aleatorio = (int) (Math.random() * 45);
         return aleatorio;
     }
 
