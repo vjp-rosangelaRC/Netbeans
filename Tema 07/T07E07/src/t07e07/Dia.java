@@ -39,8 +39,6 @@ public class Dia {
     public void setTemperatura(int temperatura) {
         this.temperatura = temperatura;
     }
-    
-    
 
     @Override
     public String toString() {
