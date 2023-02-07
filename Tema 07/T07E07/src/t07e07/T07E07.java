@@ -33,12 +33,15 @@ public class T07E07 {
     public static void rellenarVector(Dia[] vector) {
         String[] vNombres = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
         int temperatura, n;
-
+        n = generarDiaAleatorio();  
+        
         for (int i = 0; i < vector.length; i++) {
             temperatura = generarTempAleatorio();
-            n = generarDiaAleatorio();
-
             vector[i] = new Dia(vNombres[n], temperatura);
+            n = n + 1;
+            if (n > 6){
+                n=0;
+            }
         }
     }
 
