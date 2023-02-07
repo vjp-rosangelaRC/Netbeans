@@ -62,17 +62,17 @@ public class T07E07 {
     
     public static void diasMasCalurosos(Dia[] vector){
         int i;
-        Dia max = vector[0];
+        int max = vector[0].getTemperatura();
         
         for (i=0; i < vector.length; i++){
-            if (vector[i]>max){
-                max = vector[i];
+            if (vector[i].getTemperatura()>max){
+                max = vector[i].getTemperatura();
             }
         }
         
         // Mostrar
         for (i = 0; i < vector.length; i++) {
-            if (vector[i] == max) {
+            if (vector[i].getTemperatura() == max) {
                 System.out.println("    El " + vector[i].getNombreDia() + " de la semana " + (i + 1) + " con " + max + " grados.");
             }
         }     
