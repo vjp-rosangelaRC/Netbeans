@@ -286,6 +286,16 @@ public class T07E08 {
         // TODO code application logic here
         Objetos[] vector = new Objetos[1]; //temporal
         menuGeneral(vector);
+        
+        /*Para crear el objeto primero pedimos la información y luego la 
+        metemos en el vector, posición 0, etc. Uso el constructor parametrizado
+        para ir añadiendo la información dentro del vector. También se puede usar
+        el constructor por defecto creando un objeto vacío al que luego le añadimos
+        la información*/
+        /*tengo que crear le vector antes, ya luego vamos haciendo las operaciones
+        */
+        /*para comprar sería un bucle for con el contenido de los objetos y luego 
+        vamos mostrando tipo "pulse 1 para comprar + v.getNombre" y etc*/
 
     }
 

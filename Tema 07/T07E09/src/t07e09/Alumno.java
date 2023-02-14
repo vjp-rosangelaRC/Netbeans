@@ -13,16 +13,20 @@ import java.util.Scanner;
  */
 public class Alumno {
     String nombreAlumno;
-    Asignatura[] notas;
+    Asignatura[] vAsignatura;
 
     public Alumno() {
         this.nombreAlumno = "";
-        this.notas = notas;
+        vAsignatura = new Asignatura[4];
+        for (int i= 0; i < vAsignatura.length; i++){
+            vAsignatura[i] = new Asignatura();
+        }
     }
+    /*Es en el constructor donde damos el tamaño del vector*/
     
     public Alumno(String nombreAlumno, Asignatura[] notas) {
         this.nombreAlumno = nombreAlumno;
-        this.notas = notas;
+        this.vAsignatura = notas;
     }
 
     public String getNombreAlumno() {
@@ -33,12 +37,12 @@ public class Alumno {
         this.nombreAlumno = nombreAlumno;
     }
 
-    public Asignatura[] getNotas() {
-        return notas;
+    public Asignatura[] getvAsignatura() {
+        return vAsignatura;
     }
 
-    public void setNotas(Asignatura[] notas) {
-        this.notas = notas;
+    public void setvAsignatura(Asignatura[] vAsignatura) {
+        this.vAsignatura = vAsignatura;
     }
     
    

@@ -52,7 +52,19 @@ public class T07E09 {
             System.out.println(n);
         }
     }
-
+    /*El método de rellenar asignaturas mejor si está dentro de la clase de 
+    asignatura tal que 
+    rellenarAsignaturas(){
+    for (i=0; i < Asignatura.lenght; i++){
+    }
+    
+    Para sacar la nota más difícil habría que sacar la nota media de la asignatura
+    sacando la nota de cada uno de los alumnos y haciendo media para esa asignatura.
+    Método de getNotaAsignaturaPosición nos retorna la nota según la posición de la 
+    asignatura que reciba por parámetros. Y luego en otro método voy sumando las notas
+    que voy sacando en cada posición. 
+    
+    */
     public static void main(String[] args) {
         // TODO code application logic here
         Asignatura asignatura1 = new Asignatura();
