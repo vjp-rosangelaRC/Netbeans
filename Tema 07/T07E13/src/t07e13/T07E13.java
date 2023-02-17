@@ -37,9 +37,21 @@ public class T07E13 {
                 }
                 case 2: {
                     mostrarDatos(alumnos);
+                    break;
                 }
                 case 3:{
-                    mediaMayorQueNumero();
+                    mediaMayorQueNumero(alumnos); /*No es la más alta, son todas */
+                    break;
+                }
+                
+                case 4:{
+                    mediaSuspenso(alumnos);
+                    break;
+                }
+                
+                case 5:{
+                    matriculado(alumnos);
+                    break;
                 }
                 
                 default: {
@@ -69,43 +81,117 @@ public class T07E13 {
     public static void rellenarDatos(Alumno[] alumnos) {
         int posicion, auxEdad, auxNota;
         String auxS;
+        boolean error;
+        boolean celdaOcupada;
 
         do {
+            celdaOcupada = false;
+            error = false;
             System.out.println("¿Qué código tiene el alumno que quiere introducir?");
             posicion = pedirN();
-            posicion = posicion - 1;
-
-            if (alumnos[posicion] == null) {
-                System.out.println("¿Nombre del alumno?");
-                auxS = pedirS();
-
-                System.out.println("¿Edad del alumno?");
-                auxEdad = pedirN();
-
-                System.out.println("¿Media del alumno?");
-                auxNota = pedirN();
-
-                alumnos[posicion] = new Alumno(auxS, auxEdad, auxNota);
-
-            } else {
+            try {
+                posicion = posicion - 1;
                 if (alumnos[posicion] != null) {
                     System.out.println("Este alumno ya existe en el sistema. Introduzca un alumno nuevo");
+                    celdaOcupada = true;
                 }
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("No es una opción válida");
+                error = true;
+            }     
+            /*finally{
+                alumnos[posicion] = null;
+            }*/
+        } while (celdaOcupada || error == true);
+        
+        if (alumnos[posicion] == null) {
+            System.out.println("¿Nombre del alumno?");
+            auxS = pedirS();
 
-            }
-        } while (alumnos[posicion] != null);
+            System.out.println("¿Edad del alumno?");
+            auxEdad = pedirN();
+
+            System.out.println("¿Media del alumno?");
+            auxNota = pedirN();
+
+            alumnos[posicion] = new Alumno(auxS, auxEdad, auxNota);
+        } 
     } // Aquí tengo que poner el do while solo en la parte de pedir la posición 
-    
+
     public static void mostrarDatos(Alumno[] alumnos){
+        
         for (int i = 0; i < alumnos.length; i++){
-            System.out.println("El alumno " + alumnos[i].getNombre() + " tiene " + alumnos[i].getEdad() + " años y una media de " + alumnos[i].getNotaMedia());
+            if (alumnos[i] != null){
+               System.out.println("El alumno " + alumnos[i].getNombre() + " tiene " + alumnos[i].getEdad() + " años y una media de " + alumnos[i].getNotaMedia()); 
+            }
+        }   
+    }
+    
+    public static void mediaMayorQueNumero(Alumno[] alumnos){
+        int numACompararar, aux, i; 
+        aux = alumnos[0].getNotaMedia();
+        
+        System.out.println("Con qué quiere comparar la media");
+        numACompararar = pedirN();
+        
+        for(i = 0; i<alumnos.length; i++){
+            if (alumnos[i] != null){
+                if (alumnos[i].getNotaMedia() > numACompararar){
+                    aux = alumnos[i].getNotaMedia();
+                }
+            }
+        }   
+        
+        // Mostrar
+        for(i=0; i<alumnos.length; i++){
+            if (alumnos[i] != null){
+                if(alumnos[i].getNotaMedia() == aux){
+                   System.out.println("La nota media más alta es " + aux); 
+                }
+            }
         }
     }
     
-    public static void mediaMayorQueNumero(){
+    public static void mediaSuspenso (Alumno[] alumnos){
+        int i; 
+        String[] aux = new String[5];
         
+        aux[0] = alumnos[0].getNombre();
+        
+        for(i = 0; i<alumnos.length; i++){
+            if (alumnos[i] != null){
+                if (alumnos[i].getNotaMedia() < 5){
+                    aux[i] = alumnos[i].getNombre();
+                }
+            }
+        }   
+        
+        // Mostrar
+        System.out.println("Los alumnos suspenso son ");
+        for(i=0; i<alumnos.length; i++){
+            if (aux[i] != null ){
+                System.out.println(aux[i]);
+            }
+            
+        }
     }
-
+    
+    public static void matriculado (Alumno[] alumnos){
+        String nombreAlumno;
+        int i; 
+        String aux = "";
+        boolean matriculado = false;
+        
+        System.out.println("¿Qué alumno busca?");
+        nombreAlumno = pedirS();
+        
+        for(i = 0; i<alumnos.length; i++){
+            if (alumnos[i].getNombre()== nombreAlumno){
+                System.out.println("El alumno " + nombreAlumno + " sí está matriculado.");
+            }
+        }   
+    }
+        
     public static void main(String[] args) {
         // TODO code application logic here
         Alumno alumno1 = new Alumno("Pepe", 18, 5);
@@ -120,7 +206,6 @@ public class T07E13 {
 
         Alumno[] alumnos = new Alumno[5];
         menuAlumno(alumnos);
-
     }
 
 }
