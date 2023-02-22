@@ -104,7 +104,7 @@ public class T07E13 {
             }*/
         } while (celdaOcupada || error == true);
         
-        if (alumnos[posicion] == null) {
+        if (alumnos[posicion] == null) { //Esto en principio sobra
             System.out.println("¿Nombre del alumno?");
             auxS = pedirS();
 
@@ -133,7 +133,7 @@ public class T07E13 {
         
         System.out.println("Con qué quiere comparar la media");
         numACompararar = pedirN();
-        
+        // con un solo bucle for vale
         for(i = 0; i<alumnos.length; i++){
             if (alumnos[i] != null){
                 if (alumnos[i].getNotaMedia() > numACompararar){
@@ -155,7 +155,7 @@ public class T07E13 {
     public static void mediaSuspenso (Alumno[] alumnos){
         int i; 
         String[] aux = new String[5];
-        
+        // Pide cuántos alumnos, no sacar los alumnos suspensos 
         aux[0] = alumnos[0].getNombre();
         
         for(i = 0; i<alumnos.length; i++){
@@ -180,7 +180,9 @@ public class T07E13 {
         String nombreAlumno;
         int i; 
         String aux = "";
-        boolean matriculado = false;
+        boolean matriculado = false; // Este booleano sofbra y el bucle es While (en el
+        // while sí habría que poner un booleano
+        //luego faltaría también compronar si el [i] es nulo
         
         System.out.println("¿Qué alumno busca?");
         nombreAlumno = pedirS();
