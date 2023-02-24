@@ -17,7 +17,7 @@ public class T02E15 {
     public static void main(String[] args) {
         // TODO code application logic here
         int tiempo=10000; 
-        int minutos = tiempo/60;
+        int minutos;
         
         
         
