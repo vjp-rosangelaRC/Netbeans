@@ -3,32 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package t02e15;
+package t02e22;
+
+import java.util.Scanner;
 
 /**
  *
  * @author rdlrosac01
  */
-public class T02E15 {
+public class T02E22 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int tiempo=10000; 
-        int segundos = tiempo % 60;
-        tiempo = tiempo/60;
-        int minutos= tiempo%60;
-        tiempo = tiempo/60;
-        int horas= tiempo/60;
+        Scanner entrada = new Scanner(System.in);
+        int area, perimetro, lado; 
         
+        System.out.println("Lado");
+        lado = entrada.nextInt();
         
+        perimetro =lado*lado;
+        area = lado * 2;
         
-        
-        System.out.println("Segundos " + tiempo +" minutos " + minutos + " horas " + horas);
-        System.out.println("Minutos " + minutos);
-        
+        System.out.println("" + area + ".." + perimetro);
     }
     
 }

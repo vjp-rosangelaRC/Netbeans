@@ -3,31 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package t02e15;
+package t02e16;
 
 /**
  *
  * @author rdlrosac01
  */
-public class T02E15 {
+public class T02E16 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int tiempo=10000; 
-        int segundos = tiempo % 60;
-        tiempo = tiempo/60;
-        int minutos= tiempo%60;
-        tiempo = tiempo/60;
-        int horas= tiempo/60;
+        int billetesTotales, billetesAux, billetes50, billetes10;
+        
+        billetesTotales=130;
+        billetesAux = billetesTotales;
+        
+        billetes50=130/50;
+        billetesAux = 130%50;
+        
+        billetes10 = billetesAux/10;
+        
+        System.out.println("50=" + billetes50 + " 10=" + billetes10);
         
         
-        
-        
-        System.out.println("Segundos " + tiempo +" minutos " + minutos + " horas " + horas);
-        System.out.println("Minutos " + minutos);
         
     }
     
