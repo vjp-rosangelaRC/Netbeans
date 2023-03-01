@@ -56,7 +56,22 @@ public class T10E06 {
         for (int i=0; i < MAX; i++){
             suma = suma + (int) lista.get(i);
         }
-        System.out.println("El total ha sido: " + suma);
+        System.out.println("El total de ventas del año ha sido: " + suma);
+    }
+    
+    public static void sumaAnhosA (String[] mesesAnho, ArrayList lista) {
+        ArrayList <String[]> meses = new ArrayList<>();
+        meses.add(mesesAnho);
+        
+        int suma = 0; 
+        String a = "a";
+        
+        for (int i=0; i < MAX; i++){
+            if (meses.contains(a)){
+                suma = suma + (int) lista.get(i);
+            }
+        }
+        System.out.println("El total de ventas para los meses con a son: " + suma);
     }
     
     public static void main(String[] args) {
@@ -95,6 +110,11 @@ public class T10E06 {
                 
                 case 4: {
                     sumaTotal(lista);
+                    break;
+                }
+                
+                case 5:{
+                    sumaAnhosA(mesesAnho, lista); //No funciona
                     break;
                 }
                 
