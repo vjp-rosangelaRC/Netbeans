@@ -41,6 +41,7 @@ public class T10E04 {
 
         for (int i = 0; i < listaB.size() - 1; i++) {
             if (listaB.get(i) > 0) {
+                
                 for (int j = i+1; j < listaB.size() - 1; j++) {
                     if (listaB.get(i) == listaB.get(j)) {
                         listaB.set(j, 0);
