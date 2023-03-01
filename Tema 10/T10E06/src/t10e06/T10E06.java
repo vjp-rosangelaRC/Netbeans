@@ -74,13 +74,13 @@ public class T10E06 {
         System.out.println("El total de ventas para los meses con a son: " + suma);
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) { //lo idea sería usar un vector porque estático
         // TODO code application logic here
         
         int opcion;
         
         String[] mesesAnho = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
-        ArrayList lista = new ArrayList();
+        ArrayList lista = new ArrayList(); //Aquí falta declararlo como integer
         
         do {
             System.out.println("1. Introducir las ventas de coches de cada uno de los 12 meses del año.");

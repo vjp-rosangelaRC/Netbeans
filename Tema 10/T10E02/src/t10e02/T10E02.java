@@ -57,30 +57,27 @@ public class T10E02 {
         return suma;
     }
         
-    public static void main(String[] args) {
+    public static void main(String[] args) { // Faltaría un método para rellenar la lista
         // TODO code application logic here
         ArrayList <Integer> lista = new ArrayList <Integer>();
         int n, suma, mayor, menor;
         
-        do{
+        do{ //Este debería ser un bucle while, no do while
             System.out.println("Introduzca un número");
             n= pedirN();
             lista.add(n);
         }while(n >= 0);
         
+        /* Con el while sería 
+        n = pedirN() while (num>0) list.add(n); n = pedirN();*/
         suma = suma(lista);
         mayor = mayorDeLaLista(lista);
         menor = menorDeLaLista(lista);
         
-        System.out.println(lista);
+        System.out.println(lista); // Para mostrar la lista habría que usar un for?
         System.out.println("El número mayor de la lista es " + mayor);
         System.out.println("El número menor de la lista es " + menor);
-        System.out.println("La suma es " + suma);
-        
-        
-        
-        
-        
+        System.out.println("La suma es " + suma);        
         
     }
     

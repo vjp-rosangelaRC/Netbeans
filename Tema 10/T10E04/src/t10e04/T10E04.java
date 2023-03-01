@@ -35,7 +35,7 @@ public class T10E04 {
         } while (n >= 0);
     }
 
-    public static ArrayList aCero(ArrayList lista) {
+    public static ArrayList aCero(ArrayList<Integer> lista) {
         ArrayList<Integer> listaB = new ArrayList<>();
         listaB = (ArrayList<Integer>) lista.clone();
 
@@ -50,6 +50,12 @@ public class T10E04 {
         }
         return listaB;
     }
+    /*En este caso tendría que usar index of y last index of dentro de un método
+    que mire si es repetido
+    Usa un método recorrer lista que llama al método sustituirporcero si está 
+    repetido 
+    No necesito que el for se recorra todo el bucle, solo cuando aparece el primero
+    y el ultimo repetido*/
 
     public static void mostrarListas(ArrayList lista, ArrayList listaB) {
         System.out.println("La lista introducida es: " + lista);
