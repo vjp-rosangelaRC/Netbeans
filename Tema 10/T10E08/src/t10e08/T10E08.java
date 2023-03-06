@@ -33,8 +33,19 @@ public class T10E08 {
     }
     
     public static void rellenarArray(ArrayList<Alumno> alumnos, String nombre, int curso){
-            alumnos.add(new Alumno(nombre, curso));
+            alumnos.add(new Alumno(nombre, curso)); //mejor alumnoN = new Alummno (nombre, curso) -- lAlumno.add(alumnoN);
     }
+    
+    /*
+    Con iterador sería iterator alumnos it = (Alumnos.iterator(); 
+    Tengo que inicializar (la parte antes del igual) y luego le digo
+    a dónde tiene que apuntar con la otra parte
+    
+    while(it.hasNExt()){
+    alumnoaux = it.next();
+    sout(alumnoAux.toString). 
+    }
+    */
     
     public static void mostrarArray(ArrayList<Alumno> alumnos){
         for (int i=0; i < alumnos.size(); i++){
