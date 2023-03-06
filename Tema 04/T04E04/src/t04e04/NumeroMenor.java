@@ -10,6 +10,7 @@ package t04e04;
  * @author Ross
  */
 public class NumeroMenor {
+    
     public static void NumeroMenor (int num1, int num2, int num3) {
     
     if (num1 < num2 && num1 < num3) { 
