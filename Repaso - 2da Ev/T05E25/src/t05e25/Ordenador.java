@@ -82,6 +82,11 @@ public class Ordenador {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
+
+    @Override
+    public String toString() {
+        return "Ordenador{" + "cantidadMemoria=" + cantidadMemoria + ", ram=" + ram + ", capacidadHDD=" + capacidadHDD + ", modeloProcesador=" + modeloProcesador + ", modeloGrafica=" + modeloGrafica + ", precio=" + precio + '}';
+    }
     
     
     
