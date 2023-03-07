@@ -16,6 +16,12 @@ public class T05E24 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Productos manzana = new ProductosFrescos("aaa", " aa", " 0 0", 0);
+        Productos pescado = new ProductosCongelados(0, "ddd", 0);
+        Productos judias = new ProductosRefrigerados(0, "", 0);
+        
+        System.out.println(manzana.toString());
+        System.out.println(pescado.toString());
+        System.out.println(judias.toString());
     }
-    
 }
