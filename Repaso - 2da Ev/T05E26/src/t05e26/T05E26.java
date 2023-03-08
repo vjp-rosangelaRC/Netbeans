@@ -19,25 +19,20 @@ public class T05E26 {
         Producto papas = new Papas(170);
         Producto chocos = new Chocos(300);
         int contador = 0;
+        double stock1, stock2;
         boolean parar = false;
 
-        do {
-            if (papas.getStock() <= 1) {
-                parar = true;
-            } else {
-                if (chocos.getStock() <= 1) {
-                    parar = true;
-                }
-            }
+        while (papas.getStock() > 0 && chocos.getStock() > 0) {
+
             papas.actualizarStock(1);
             chocos.actualizarStock(0.5);
-            contador++;
 
-        } while (parar = false);
+            contador++;
+        }
 
         System.out.println(papas.getStock());
         System.out.println(chocos.getStock());
-        System.out.println((contador));
+        System.out.println((contador * 3));
 
     }
 
