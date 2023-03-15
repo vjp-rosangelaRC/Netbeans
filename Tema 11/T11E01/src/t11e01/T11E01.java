@@ -164,6 +164,7 @@ public class T11E01 { // Hay que usar iterador o for each para todo
         ArrayList<Dia> diaConSemana = new ArrayList<>();
 
         menu(diaConSemana, mapa);
+        //CORREGIR LOS BUCLES Y USAR FOR EACH O ITERADORES
     }
 
 }
