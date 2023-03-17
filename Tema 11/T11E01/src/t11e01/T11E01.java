@@ -52,19 +52,35 @@ public class T11E01 { // Hay que usar iterador o for each para todo
             if (n > 6) {
                 n = 0;
             }
+            /*El mapa tiene una clave que define el lugar del índice
+            En este caso podemos asignarle la i, pero tiene que empezar en 1 y ser
+            mayor O IGUAL a 31*/
+            
             mapa.put(mapa.size(), diaConSemana.get(i));
         }
     }
 
     public static void mostrarMapa(Map<Integer, Dia> mapa, ArrayList<Dia> diaConSemana) {
-        Iterator it = mapa.keySet().iterator();
+        Iterator<Integer> it = mapa.keySet().iterator(); //Esto inicializa el it para que apunte a la primera clave del mapa
         int i;
 
-        while (it.hasNext()) {
+        while (it.hasNext()) {//Esto nos retorna la clave, ahora quiero que me devuelva el elemento 
+            //asociado a esta clave
             i = (int) it.next();
             System.out.println("El día " + diaConSemana.get(i).getNombreDia() + " hubo una temperatura de " + diaConSemana.get(i).getTemperatura());
             i++;
         }
+        /*Con el for each*/
+        /*
+        for (Integer clave:  mapa.keyset() ){
+            diaAux = mapa.get(clave); → me retorna el objeto asociado a esta clave
+            sout(diaAux.toString);
+        }
+        El Integer especifíco qué tipo de dato uso, y en clave guardo los índices
+        Se puede inicializar el it sin darle el tipo de dato, por eso se hace el 
+        cast explícito
+        
+        */
     }
 
     public static int mostrarMedia(ArrayList<Dia> diaConSemana) {
@@ -74,6 +90,19 @@ public class T11E01 { // Hay que usar iterador o for each para todo
         }
         media = suma / MAX;
         return media;
+        //Esto con un for each o un iterador
+        /*
+         for (Integer clave:mapa.keyset()){
+         suma... 
+          
+         }
+         con el iterador 
+        
+        it<integer> ... 
+        while (...){
+        suma... 
+        }
+         */
     }
 
     public static void diaMasCaluroso(ArrayList<Dia> diaConSemana, Map<Integer, Dia> mapa) {
@@ -81,7 +110,18 @@ public class T11E01 { // Hay que usar iterador o for each para todo
         int masCaluroso, i, contador;
         contador = 0;
         masCaluroso = diaConSemana.get(0).getTemperatura();
-
+        /*
+        Aquí un iterador o un for each 
+        Cuando acabo el primer recorrigo con el iterador este estaría apuntando al 
+        siguiente del último (que sería nulo) y tendría que volver inicializarlo a 
+        0 para que empiece de nuevo: it = mapa.keyset().iterator();
+        NO hace falta declararlo de nuevo, solo que apunte al principio
+        Pero para el poner el mayor a 0, usamos el que no tiene índices, no hay día 
+        con clave 0. 
+        En este ejercicio se puede poner
+        mapa.get(1).getTemp.
+        Pero lo ideal sería con el método next. Así me retorna el primer día. 
+        */
         for (i = 0; i < diaConSemana.size(); i++) {
             if (masCaluroso < diaConSemana.get(i).getTemperatura()) {
                 masCaluroso = diaConSemana.get(i).getTemperatura();
@@ -162,6 +202,7 @@ public class T11E01 { // Hay que usar iterador o for each para todo
         // TODO code application logic here
         Map<Integer, Dia> mapa = new HashMap<>();
         ArrayList<Dia> diaConSemana = new ArrayList<>();
+        //NO usar arrayList aquí, vale con que se guarden en el mapa
 
         menu(diaConSemana, mapa);
         //CORREGIR LOS BUCLES Y USAR FOR EACH O ITERADORES
