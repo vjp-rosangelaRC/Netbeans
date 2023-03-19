@@ -7,6 +7,7 @@ package t10e06;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -78,6 +79,7 @@ public class T10E06 {
         // TODO code application logic here
         
         int opcion;
+        int prueba;
         
         String[] mesesAnho = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
         ArrayList lista = new ArrayList(); //Aquí falta declararlo como integer
