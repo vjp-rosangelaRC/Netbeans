@@ -6,6 +6,7 @@
 package salario_;
 
 import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Salario_ {
         String vendedor = "vendedor", encargado = "encargado";
         float horas = 0, salarioBase = 0, prima = 0, salarioBruto;
         boolean iguales, iguales2;
+        int aa;
 
         // Falta el equals
         iguales = vendedor.equalsIgnoreCase(tipo);
