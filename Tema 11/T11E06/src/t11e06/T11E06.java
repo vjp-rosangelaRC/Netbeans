@@ -46,7 +46,7 @@ public class T11E06 {
         return donacion1;
     }
     
-    public static void mostrarDonaciones(Campania campaniaAlfa){
+    public static void mostrarDonaciones(Campania campaniaAlfa){ //Mejor dentro de la clase campaña
         Iterator<Donacion> iterador = campaniaAlfa.getDonaciones().iterator();
         while (iterador.hasNext()){
             System.out.println(iterador.next());
@@ -54,6 +54,22 @@ public class T11E06 {
     }
     
     public static void buscarDonantes(Campania campaniaAlfa){
+        /*
+        me tengo que recorrer todas las donaciones y si el nombre del donante 
+        coincide con lo que estoy buscando paro y muestro la información. 
+        Recibo por parámetros el nombre. Tratamos de hacer el programa lo más 
+        genérico posible para poder reutilizarlo. 
+        Para mostrar cuantas donaciones tengo en el conjunto tengo el método size
+        que me devuelve el tamaño de ese conjunto.
+        Para mostrar las donaciones igual que el mostrar anterior. 
+        Para mostrar el total de la campaña un iterador que recoja los precios y
+        que se vayan añadiendo a la variable suma con cada iteración. 
+        
+        
+        
+        
+        
+        */
         String nombre; 
         int num;
         ArrayList<Donacion> donacionAux = new ArrayList<>();
@@ -63,7 +79,7 @@ public class T11E06 {
         
         donacionAux = campaniaAlfa.getDonaciones();
         
-        donacionAux.buscarNombre(nombre);
+        //donacionAux.buscarNombre(nombre);
     }
     
     public static void main(String[] args) {
@@ -97,7 +113,7 @@ public class T11E06 {
                 }
                 
                 case 3:{
-                    buscarDonantes(campaniaAlfa, donacion);
+                    buscarDonantes(campaniaAlfa);
                     break;
                 }
                 
