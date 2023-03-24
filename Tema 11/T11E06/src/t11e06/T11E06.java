@@ -64,11 +64,6 @@ public class T11E06 {
         Para mostrar las donaciones igual que el mostrar anterior. 
         Para mostrar el total de la campaña un iterador que recoja los precios y
         que se vayan añadiendo a la variable suma con cada iteración. 
-        
-        
-        
-        
-        
         */
         String nombre; 
         int num;
@@ -87,6 +82,26 @@ public class T11E06 {
         Campania campaniaAlfa = new Campania();
         campaniaAlfa.setNombreCampania("Campaña Alfa");
         Donacion donacion;
+        /*
+        Sobre el ejercicio 7
+        Necesitamos una estructura de datos dinámica, no vectores ni matrices. 
+        Yo me creo la campaña pero no he añadido ninguna donación. 
+        La búsqueda depende de la estructura de datos que nos hayamos creado (busqueda 
+        lineal para ArrayList, para un mapa con clave el nombre de la campaña para 
+        mostrar tendríamso que pedir el nombre de la campaña y con el método contains
+        key ya accedo de manera directa.
+        En este ejercicio tengo varios métodos en la clase campaña, así que aquí puedo
+        ejecutar los métodos de la clase. 
+        Para insertar campaña primero creamos uan campaña. Creamos el método de inserta 
+        la donación en campaña también.
+        Si la camapaña que me ha dado no existe necesitamos primero hacer una búsqueda 
+        de la campaña y ver si existe o no. 
+        En este caso el método del total me devuelve el total de cada campaña y luego
+        el total recaudado suma todos los totales. 
+        Para el obtener mayor donación tenemos un try catch para ver si no hay donaciones
+        
+        
+        */
         
         int opcion; 
         
