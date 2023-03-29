@@ -43,5 +43,10 @@ public class Contacto {
     public void setNumeroDeMovil(String numeroDeMovil) {
         this.numeroDeMovil = numeroDeMovil;
     }
+
+    @Override
+    public String toString() {
+        return "Contacto{" + "nombre=" + nombre + ", edad=" + edad + ", numeroDeMovil=" + numeroDeMovil + '}';
+    }
     
 }
