@@ -40,5 +40,30 @@ public class Pelicula {
         rentabilidad = ingresos - this.costeLicencia;
         return rentabilidad;
     }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public float getCosteLicencia() {
+        return costeLicencia;
+    }
+
+    public void setCosteLicencia(float costeLicencia) {
+        this.costeLicencia = costeLicencia;
+    }
+
+    public Socio[] getvSocios() {
+        return vSocios;
+    }
+
+    public void setvSocios(Socio[] vSocios) {
+        this.vSocios = vSocios;
+    }
+    
     
 }

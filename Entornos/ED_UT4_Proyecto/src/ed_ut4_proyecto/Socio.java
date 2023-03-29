@@ -14,4 +14,21 @@ public class Socio {
         this.nombre = nombre;
         this.precioAbonado = precioAbonado;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public float getPrecioAbonado() {
+        return precioAbonado;
+    }
+
+    public void setPrecioAbonado(float precioAbonado) {
+        this.precioAbonado = precioAbonado;
+    }
+    
 }
