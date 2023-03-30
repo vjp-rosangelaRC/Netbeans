@@ -2,9 +2,9 @@
 package ed_ut4_proyecto;
 
 public class Pelicula {
-    String titulo;
-    float costeLicencia;
-    Socio[] vSocios;
+    private String titulo;
+    private float costeLicencia;
+    private Socio[] vSocios;
 
     public Pelicula() {
         this.titulo = "";
@@ -28,14 +28,14 @@ public class Pelicula {
         System.out.println("Titulo: "+this.titulo);
         System.out.println("Coste licencia: "+this.costeLicencia);
         for(int i = 0; i < this.vSocios.length;i++){
-            System.out.println("    Socio: "+this.vSocios[i].nombre+" - Precio abonado: "+this.vSocios[i].precioAbonado);
+            System.out.println("    Socio: "+this.vSocios[i].getNombre()+" - Precio abonado: "+this.vSocios[i].getPrecioAbonado());
         }
     }
     
     public float getRentabilidad(){
         float rentabilidad, ingresos = 0;
         for(int i = 0; i < this.vSocios.length;i++){
-            ingresos = ingresos + this.vSocios[i].precioAbonado;
+            ingresos = ingresos + this.vSocios[i].getPrecioAbonado();
         }
         rentabilidad = ingresos - this.costeLicencia;
         return rentabilidad;
