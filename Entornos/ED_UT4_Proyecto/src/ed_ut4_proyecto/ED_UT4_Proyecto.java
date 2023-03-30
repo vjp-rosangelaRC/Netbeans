@@ -6,12 +6,12 @@ public class ED_UT4_Proyecto {
 
     public static void main(String[] args) {
         String titulo;
-        float rentableMax, rentableMin;
-        boolean enc;
+        float rentabilidadMax, rentabilidadMin;
+
         Scanner teclado = new Scanner(System.in);
         Pelicula[] vPeliculas = new Pelicula[2];
-        titulo = vPeliculas[0].titulo;
-        int opc;
+
+        int opcion;
         do {
             System.out.println("1. Rellenar");
             System.out.println("2. Mostrar");
@@ -19,48 +19,52 @@ public class ED_UT4_Proyecto {
             System.out.println("4. Mostrar - rentable");
             System.out.println("5. Buscar película");
             System.out.println("6. Salir");
-            opc = teclado.nextInt();
+            opcion = teclado.nextInt();
             teclado.nextLine(); // Sirve para omitir el salto de línea después de leer un número
-            switch (opc) {
+            switch (opcion) {
                 case 1:
                     rellenar(vPeliculas, teclado);
                     break;
                 case 2:
-                    mostrar(vPeliculas);
+                    mostrarPeliculas(vPeliculas);
                     break;
                 case 3:
-                    rentableMax = vPeliculas[0].getRentabilidad();
-                    mostrarMasRentable(vPeliculas, rentableMax, titulo);
+                    rentabilidadMax = vPeliculas[0].getRentabilidad();
+                    mostrarMasRentable(vPeliculas, rentabilidadMax);
                     break;
                 case 4:
-                    rentableMin = vPeliculas[0].getRentabilidad();
-                    mostrarMenosRentable(vPeliculas, rentableMin, titulo);
+                    rentabilidadMin = vPeliculas[0].getRentabilidad();
+                    mostrarMenosRentable(vPeliculas, rentabilidadMin);
                     break;
                 case 5:
                     System.out.println("Título: ");
                     titulo = teclado.nextLine();
-                    int i = 0;
-                    enc = false;
-                    buscarPelicula(i, vPeliculas, enc, titulo);
+
+                    buscarPelicula(vPeliculas, titulo);
 
                     break;
                 case 6:
                     System.out.println("ADIÓS");
                     break;
+
+                default:
+                    System.out.println("No es una opción válida");
             }
 
-        } while (opc != 6);
+        } while (opcion != 6);
     }
 
-    public static void buscarPelicula(int i, Pelicula[] vPeliculas, boolean enc, String titulo) {
-        while ((i < vPeliculas.length) && (!enc)) {
-            if (vPeliculas[i].titulo.equalsIgnoreCase(titulo)) {
-                enc = true;
+    public static void buscarPelicula(Pelicula[] vPeliculas, String titulo) {
+        int i = 0;
+        boolean encontrado = false;
+        while ((i < vPeliculas.length) && (!encontrado)) {
+            if (vPeliculas[i].getTitulo().equalsIgnoreCase(titulo)) {
+                encontrado = true;
             } else {
                 i++;
             }
         }
-        if (enc) {
+        if (encontrado) {
             vPeliculas[i].mostrarPelicula();
             System.out.println(vPeliculas[i].getRentabilidad());
         } else {
@@ -68,31 +72,33 @@ public class ED_UT4_Proyecto {
         }
     }
 
-    public static void mostrarMenosRentable(Pelicula[] vPeliculas, float rentableMin, String titulo) {
-        float rentableActual;
+    public static void mostrarMenosRentable(Pelicula[] vPeliculas, float rentableMin) {
+        float rentableActual = 0;
+        String titulo = "";
         for (int i = 0; i < vPeliculas.length; i++) {
             rentableActual = vPeliculas[i].getRentabilidad();
             if (rentableActual < rentableMin) {
                 rentableMin = rentableActual;
-                titulo = vPeliculas[i].titulo;
+                titulo = vPeliculas[i].getTitulo();
             }
         }
         System.out.println("La perícula " + titulo + " con una rentabilidad de " + rentableMin + " euros.");
     }
 
-    public static void mostrarMasRentable(Pelicula[] vPeliculas, float rentableMax, String titulo) {
-        float rentableActual;
+    public static void mostrarMasRentable(Pelicula[] vPeliculas, float rentableMax) {
+        float rentableActual = 0;
+        String titulo = "";
         for (int i = 0; i < vPeliculas.length; i++) {
             rentableActual = vPeliculas[i].getRentabilidad();
             if (rentableActual > rentableMax) {
                 rentableMax = rentableActual;
-                titulo = vPeliculas[i].titulo;
+                titulo = vPeliculas[i].getTitulo();
             }
         }
         System.out.println("La perícula " + titulo + " con una rentabilidad de " + rentableMax + " euros.");
     }
 
-    public static void mostrar(Pelicula[] vPeliculas) {
+    public static void mostrarPeliculas(Pelicula[] vPeliculas) {
         for (int i = 0; i < vPeliculas.length; i++) {
             vPeliculas[i].mostrarPelicula();
         }
@@ -107,20 +113,21 @@ public class ED_UT4_Proyecto {
             vPeliculas[i] = new Pelicula();
             System.out.println("Titulo: ");
             titulo = teclado.nextLine();
-            vPeliculas[i].titulo = titulo;
+            vPeliculas[i].setTitulo(titulo);
             System.out.println("Licencia: ");
             licencia = teclado.nextFloat();
             teclado.nextLine(); // Sirve para omitir el salto de línea después de leer un número
-            vPeliculas[i].costeLicencia = licencia;
-            for (int j = 0; j < vPeliculas[i].vSocios.length; j++) {
-                vPeliculas[i].vSocios[j] = new Socio();
+            vPeliculas[i].setCosteLicencia(licencia);
+            
+            for (int j = 0; j < vPeliculas[i].getvSocios().length; j++) {
+                vPeliculas[i].getvSocios()[j] = new Socio();
                 System.out.println("Nombre: ");
                 nombre = teclado.nextLine();
-                vPeliculas[i].vSocios[j].nombre = nombre;
+                vPeliculas[i].getvSocios()[j].setNombre(nombre);
                 System.out.println("Precio Abonado: ");
                 precioAbonado = teclado.nextFloat();
                 teclado.nextLine(); // Sirve para omitir el salto de línea después de leer un número
-                vPeliculas[i].vSocios[j].precioAbonado = precioAbonado;
+                vPeliculas[i].getvSocios()[j].setPrecioAbonado(precioAbonado);
             }
         }
     }

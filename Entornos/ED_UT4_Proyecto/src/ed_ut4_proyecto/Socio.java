@@ -2,8 +2,8 @@
 package ed_ut4_proyecto;
 
 public class Socio {
-    String nombre;
-    float precioAbonado;
+    private String nombre;
+    private float precioAbonado;
 
     public Socio() {
         this.nombre = "";
