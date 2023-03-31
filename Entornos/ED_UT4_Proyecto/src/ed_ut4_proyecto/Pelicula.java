@@ -1,5 +1,7 @@
 /**
  * Esta clase contiene los atributos y métodos de la clase película
+ * En esta clase registramos una película, con su título y licencia, y le
+ * asignamos un vector de tipo Socios de 2 celdas.
  *
  * @author Rosangela de la Rosa
  * @version 2.0
@@ -16,7 +18,10 @@ public class Pelicula {
     private Socio[] vSocios;
 
     /**
-     * Constructor por defecto
+     * Constructor por defecto que inicializa los atributos de la película con
+     * valores predeterminados. 
+     * Por defecto se crea un array de socios con 2 celdas para guardar los 
+     * socios que ven la película.
      */
     public Pelicula() {
         this.titulo = "";
@@ -28,10 +33,12 @@ public class Pelicula {
     }
 
     /**
-     * Constructor parametrizado
+     * Constructor parametrizado que crea un objeto de tipo Película usando
+     * los valores que recibe. En este caso también creamos un array de Socio
+     * de 2 celdas
      *
-     * @param titulo → título de la película que quiero guardar
-     * @param costeLicencia → precio de la licencia de la película
+     * @param titulo: título de la película que quiero guardar
+     * @param costeLicencia: precio de la licencia de la película
      */
     public Pelicula(String titulo, float costeLicencia) {
         this.titulo = titulo;
@@ -80,7 +87,7 @@ public class Pelicula {
     /**
      * Método para establecer el título de película
      *
-     * @param titulo → Título de la película que queremos guardar
+     * @param titulo: Título de la película que queremos guardar
      */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -98,7 +105,7 @@ public class Pelicula {
     /**
      * Método para establecer el valor del coste de la licencia
      *
-     * @param costeLicencia → valor que queremos que tenga el coste de la
+     * @param costeLicencia: valor que queremos que tenga el coste de la
      * licencia
      */
     public void setCosteLicencia(float costeLicencia) {
@@ -106,9 +113,10 @@ public class Pelicula {
     }
 
     /**
-     * Método para recuperar los socios que tenemos en cada película
+     * Método para recuperar la información de los Socios que tenemos 
+     * registrados con cada película
      *
-     * @return un vector de socios con 2 celdas
+     * @return un vector de objetos Socios con 2 celdas
      */
     public Socio[] getvSocios() {
         return vSocios;
@@ -117,7 +125,7 @@ public class Pelicula {
     /**
      * Método para añadir información al vector de socios
      *
-     * @param vSocios → Introducimos información a los socios (nombre del socio
+     * @param vSocios: Introducimos información a los socios (nombre del socio
      * que se quiere registrar y precio que abona cada socio para ver películas)
      */
     public void setvSocios(Socio[] vSocios) {
