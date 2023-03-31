@@ -120,10 +120,8 @@ public class T12E05B {
         }
     }
     
-    public static void anhadirAlFichero(PrintWriter pw, Contacto contacto){
-        /*Falta el split*/
-        String[] temporal = contacto;
-        String[] part = contacto.split("-");
+    public static void anhadirAlFichero(PrintWriter pw, ArrayList<Contacto> listaContactos){
+        String[] part = listaContactos.split("-");
         
         /*
         String cadena = "Hola|Stackoverflow|en|español";
