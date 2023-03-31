@@ -3,34 +3,75 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package t12e05;
+package t12e05b;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltStrings.split;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  *
- * @author Ross
+ * @author rdlrosac01
  */
-public class T12E05 {
+public class T12E05B {
 
     /**
      * @param args the command line arguments
-     * Aquí falta la clase contacto
      */
-    public static void mostrarFichero(BufferedReader br) throws IOException {
-        String linea;
-        linea = br.readLine();
-        while (linea != null){
-            System.out.println(linea);
-            linea= br.readLine();
-        }
+    public static void crearFichero(Contacto contacto) {
+        FileWriter fw = null;
+        PrintWriter pw = null;
+        
+        try {
+            fw = new FileWriter("agenda.txt");
+            pw = new PrintWriter(fw);
+            anhadirAlFichero(pw, contacto);
+        } catch (FileNotFoundException e) {
+            System.out.println("No se ha encontrado");
+        } catch (IOException e) {
+            System.out.println("Error de lectura");
+        } finally {
+            if (pw != null) {
 
+                pw.close();
+
+                if (fw != null) {
+                    try {
+                        fw.close();
+                    } catch (IOException e) {
+                        System.out.println("Error");
+                    }
+                }
+            }
+        }
+    }
+
+    public static void anhadirAlArray(ArrayList<Contacto> listaContactos, Contacto contacto) {
+        String nombre, tel;
+        int edad;
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Nombre:");
+        nombre = entrada.nextLine();
+
+        System.out.println("Edad");
+        edad = entrada.nextInt();
+
+        System.out.println("Num tel");
+        entrada.next();
+        tel = entrada.nextLine();
+
+        contacto.setEdad(edad);
+        contacto.setNombre(nombre);
+        contacto.setTelefono(tel);
+        
+        listaContactos.add(contacto);
     }
 
     public static void leerFichero() {
@@ -63,52 +104,33 @@ public class T12E05 {
         }
     }
 
-    public static void escribirFichero(PrintWriter pw) {
-        String nombre, tel;
-        int edad;
-        Scanner entrada = new Scanner(System.in);
-
-        System.out.println("Nombre:");
-        nombre = entrada.nextLine();
-        pw.print(nombre);
-        
-
-        System.out.println("Edad");
-        edad = entrada.nextInt();
-        pw.print(edad);
-
-        System.out.println("Num tel");
-        entrada.next();
-        tel = entrada.nextLine();
-        pw.print(tel);
-    }
-
-    public static void crearFichero() {
-        FileWriter fw = null;
-        PrintWriter pw = null;
-
-        try {
-            fw = new FileWriter("agenda.txt", true);
-            pw = new PrintWriter(fw);
-            escribirFichero(pw);
-        } catch (FileNotFoundException e) {
-            System.out.println("No se ha encontrado");
-        } catch (IOException e) {
-            System.out.println("Error de lectura");
-        } finally {
-            if (pw != null) {
-
-                pw.close();
-
-                if (fw != null) {
-                    try {
-                        fw.close();
-                    } catch (IOException e) {
-                        System.out.println("Error");
-                    }
-                }
-            }
+    public static void mostrarFichero(BufferedReader br) throws IOException {
+        String linea;
+        linea = br.readLine();
+        while (linea != null) {
+            System.out.println(linea);
+            linea = br.readLine();
         }
+
+    }
+    
+    public static void verListaContactos(ArrayList<Contacto> listaContactos){
+        for (Contacto i:listaContactos){
+            System.out.println(i.toString());
+        }
+    }
+    
+    public static void anhadirAlFichero(PrintWriter pw, Contacto contacto){
+        /*Falta el split*/
+        String[] temporal = contacto;
+        String[] part = contacto.split("-");
+        
+        /*
+        String cadena = "Hola|Stackoverflow|en|español";
+String[] parts = cadena.split("|");              
+System.out.println(Arrays.asList(parts));
+        */
+        pw.print(contacto);
     }
 
     public static void main(String[] args) {
@@ -123,6 +145,9 @@ public class T12E05 {
         */
         Scanner entrada = new Scanner(System.in);
         int opcion;
+        Contacto contacto = new Contacto();
+        ArrayList<Contacto> listaContactos = new ArrayList<>();
+                
 
         do {
             System.out.println("1. Añadir un contacto a un fichero de texto (“agenda.txt”) en el que\n"
@@ -134,22 +159,19 @@ public class T12E05 {
                     + "3. Salir del Programa.");
             System.out.println("Introduzca opcion");
             opcion = entrada.nextInt();
-            /*Falta la parte para escribir los contactos*/
-            /*En este caso lo que hace falta es crear un objeto de tipo Contacto y poner los nombres
-            y luego de tener los contactos sería usar el método para escribir el contacto en la agenda
-            al que le pasamos el pw y el contacto que queremos introducir y ya en el print pongo
-            el contacto y su datos guardados*/
             switch (opcion) {
                 case 1: {
-                    crearFichero();
+                    anhadirAlArray(listaContactos, contacto);
                     break;
                 }
+                
                 case 2: {
-                    leerFichero();
+                    verListaContactos(listaContactos);
                     break;
                 }
 
                 case 3: {
+                    leerFichero();
                     System.out.println("Saliendo...");
                     break;
                 }

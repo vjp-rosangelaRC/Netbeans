@@ -1,0 +1,1 @@
+Contacto{nombre=, edad=0, telefono=}
