@@ -15,62 +15,50 @@ public class T06E07 {
      * @param args the command line arguments
      */
     public static int generarAleatorio(){
-        int n; 
-        n = (int) Math.floor(Math.random()*50);
-        return n; 
+        int aleatorio; 
+        aleatorio = (int) Math.floor(Math.random()*50);
+        return aleatorio;
     }
     
-    public static void rellenarVector(int[] vector){
-        for (int i = 0; i < vector.length; i++) {
-            vector[i]= generarAleatorio();
+    public static void rellenarArray(int[] arrayNumeros){
+        for (int i = 0; i < arrayNumeros.length; i++) {
+            arrayNumeros[i] = generarAleatorio();
+            System.out.println(arrayNumeros[i]);
         }
     }
     
-    public static void diezMayores(int[] vectorAuxiliar) {
-        for (int i = 0; i < vectorAuxiliar.length; i++) {
-            vectorAuxiliar[i] = -1;
+    public static void rellenarMayores(int[] mayores){
+        for (int i = 0; i < mayores.length; i++) {
+            mayores[i] = -1;
         }
     }
     
-    public static void insertarMayores(int[] vectorAuxiliar, int aleatorio){
-        boolean encontrado = false; 
-        int posicion = 0, i = 0; 
-        
-        while (encontrado == false && (i < vectorAuxiliar.length)){
-            if (aleatorio > vectorAuxiliar[i]){
-                posicion = i;
-                encontrado = true; 
+    public static void mostrarMayores(int[] arrayNumeros, int[] mayores){
+        for (int i = 0; i < mayores.length; i++) {
+            if (mayores[i] < 0){
+                if (arrayNumeros[i] > mayores[i]){
+                    mayores[i] = arrayNumeros[i];
+                }
             }
-            i++;
         }
         
-        if (encontrado){
-            for (i = vectorAuxiliar.length -1; i > posicion; i--) {
-                vectorAuxiliar[i] = vectorAuxiliar[i-1];
-            }
-            vectorAuxiliar[posicion] = aleatorio;
+        for (int i = 0; i < mayores.length; i++) {
+            System.out.println(mayores[i]);
         }
         
     }
     
-    
-    public static void mostrarVector(int[] vectorAuxilair){
-        for (int i = 0; i < vectorAuxilair.length; i++) {
-            System.out.println(vectorAuxilair[i]);
-        }
-    }
     
     public static void main(String[] args) {
         // TODO code application logic here
-        int[] vector = new int[15];
-        int[] vectorAuxiliar = new int[10];
-        
-        rellenarVector(vector);
+        int[] arrayNumeros = new int[15];
+        int[] mayores = new int[10];
         
         
-        diezMayores(vectorAuxiliar);
-        insertarMayores(vectorAuxiliar, generarAleatorio());
-        mostrarVector(vectorAuxiliar);
+        rellenarArray(arrayNumeros);
+        rellenarMayores(mayores);
+        System.out.println("/////");
+        mostrarMayores(arrayNumeros, mayores);
         
         
     }
