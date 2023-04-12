@@ -19,7 +19,7 @@ public class T06E11 {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 do {
-                    array[i] = (int) Math.floor(Math.random() * 9);
+                    array[i] = (int) Math.floor(Math.random() * 10);
                 }while (esRepetido(array, j));
                 
             }
