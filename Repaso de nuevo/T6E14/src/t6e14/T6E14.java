@@ -71,6 +71,7 @@ public class T6E14 {
         
         // Para mostrarlo
         for (int i = 0; i < 10; i++) {
+            System.out.println("El día o días más calurosos fueron");
             
         }
         
