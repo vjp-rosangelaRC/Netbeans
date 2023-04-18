@@ -89,6 +89,7 @@ public class T12E07 {
         for (int i = 0; i < caracteres.length; i++) {
             if ((int) caracteres[i] > 65 && (int) caracteres[i] < 90) {
                 caracteres[i] = Character.toLowerCase(caracteres[i]);
+                
             } else {
                 caracteres[i] = Character.toUpperCase(caracteres[i]);
             }
