@@ -46,6 +46,25 @@ public class T12E09 {
         
     }
     
+    /*
+    Si tenemos una línea puedo leer directamente caracter a caracter
+    Usamos los flujos de filereader sin más, no necesito un buffered reader
+    Las vamos almacenando en una estructura de datos dinámica(arrayList)
+    Puedo insertarla al principio, cuando la inserto directamente en mi 
+    arrayList lo puedo insertar por el principio, de manera que al insertar
+    uno nuevo este esté en la primera posición. lista.add(0, letra) y así 
+    siempre se inserta en la posición cero.
+    Otra opción es desde el size - 1 hasta 0;
+    Cuando tengo el arrayList ahora tengo que escribirlo en el fichero
+    usando el filewriter y luego leyendolo.
+    Lo ideal sería usar una pila, pero aún no las hemos visto. 
+    Usando el método read para leer lo lee como ascci, ponemos un buble 
+    que mientras no llegue al final del fichero (con el -1) y convierto el 
+    ascii a la letra que corresponda 
+    Esto haría que las letras ya estén invertidas 
+    Me recorro el arrayList de principio a final para ir poniendo los caracteres
+    */
+    
     public static void main(String[] args) {
         // TODO code application logic here
         /*

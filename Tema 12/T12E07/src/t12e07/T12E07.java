@@ -23,6 +23,7 @@ public class T12E07 {
     /**
      * @param args the command line arguments
      */
+    // Él tiene puesto también si quiere o no introducir más líneas en el fichero
     public static void crearFichero(String nombreArchivo, String textoArchivo) {
         FileWriter fw = null;
         PrintWriter pw = null;
@@ -68,6 +69,8 @@ public class T12E07 {
         System.out.println("");
     }
 
+    // Se puede leer línea a línea o caracter a caracter, como se quiera. 
+    // Aquí usa el charAt. 
     private static void leerFicheroCambiado(BufferedReader br) throws IOException {
         String linea, texto;
         ArrayList<String> contenido = new ArrayList<>();
@@ -76,6 +79,7 @@ public class T12E07 {
         // Guardo el contenido de todo el fichero en un arrayList
         linea = br.readLine();
         contenido.add(linea);
+        
 
         while (linea != null) {
             linea = br.readLine();
@@ -86,6 +90,18 @@ public class T12E07 {
         caracteres = contenido.toString().toCharArray();
 
         //Saco el ascii de los caracteres para cambiarlos de mayúsculas a minúsculas
+        /* Aquí habría que crear un auxiliar para guardar el int charAux = (int) char. 
+        Luego le sumo 32 para hacerla minúscula, lo inverso para la mayúscula
+        Ya con esto hacer el casting explícito y sacar del número el char correspondiente
+        Él también ha controlado que el fichero acabe en .text usando endWith
+        Tiene el método en el while anterior, que intercambia las líneas. 
+        Ese método lo que hace es un for con dos if, y hace dentro
+        letra = linea.charAt(i)
+        asciiLetra = (int) letra. 
+        y luego con los if le da valores a ascii letra segun sea mayús o min
+        y luego de los if, dentro del for, letra = (char) asciiLetra; 
+        
+        */
         for (int i = 0; i < caracteres.length; i++) {
             if ((int) caracteres[i] > 65 && (int) caracteres[i] < 90) {
                 caracteres[i] = Character.toLowerCase(caracteres[i]);
