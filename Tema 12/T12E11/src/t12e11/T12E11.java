@@ -5,7 +5,9 @@
  */
 package t12e11;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,19 +24,18 @@ public class T12E11 {
     /**
      * @param args the command line arguments
      */
-    public static int pedirN(){
+    public static int pedirN() {
         Scanner entrada = new Scanner(System.in);
         int n = entrada.nextInt();
-        return n; 
+        return n;
     }
-    
-    public static String pedirS(){
+
+    public static String pedirS() {
         Scanner entrada = new Scanner(System.in);
         String l = entrada.nextLine();
         return l;
     }
-    
-    
+
     public static void escribirFichero(PrintWriter pw) throws IOException {
         Scanner entrada = new Scanner(System.in);
         String respuesta = "";
@@ -44,11 +45,24 @@ public class T12E11 {
             System.out.println("Introduzca un número para almacenar");
             num = pedirN();
             pw.println(num);
-            
+
             System.out.println("¿Quiere seguir añadiendo números?");
             respuesta = pedirS();
-            
+
         } while (!respuesta.equalsIgnoreCase("no"));
+    }
+
+    private static void leerFichero(BufferedReader br) throws IOException {
+        int linea;
+        int total = 0;
+
+        linea = (int) br.readLine();
+        while (linea != null) {
+            total = total + linea;
+            linea = br.readLine();
+        }
+
+        System.out.println(total);
     }
 
     public static void main(String[] args) {
@@ -76,6 +90,35 @@ public class T12E11 {
                     }
                 }
 
+            }
+        }
+        FileReader fr = null;
+        BufferedReader br = null;
+
+        try {
+            fr = new FileReader("numeros.txt");
+            br = new BufferedReader(fr);
+            leerFichero(br);
+            String linea = br.readLine();
+
+        } catch (FileNotFoundException e) {
+            System.out.println("No existe el fichero " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error de E/S " + e.getMessage());
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    System.out.println("Error de E/S " + e.getMessage());
+                }
+            }
+            if (fr != null) {
+                try {
+                    fr.close();
+                } catch (IOException e) {
+                    System.out.println("Error de E/S " + e.getMessage());
+                }
             }
         }
 
