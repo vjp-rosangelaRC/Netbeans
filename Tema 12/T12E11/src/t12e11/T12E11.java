@@ -39,6 +39,7 @@ public class T12E11 {
     public static void escribirFichero(PrintWriter pw) throws IOException {
         Scanner entrada = new Scanner(System.in);
         String respuesta = "";
+        boolean salir = false;
         int num;
 
         do {
@@ -49,20 +50,29 @@ public class T12E11 {
             System.out.println("¿Quiere seguir añadiendo números?");
             respuesta = pedirS();
 
-        } while (!respuesta.equalsIgnoreCase("no"));
+            if (respuesta.equalsIgnoreCase("si")) {
+                salir = false;
+            } else {
+                if (respuesta.equalsIgnoreCase("no")) {
+                    salir = true;
+                }
+            }
+
+        } while (salir == false);
     }
 
     private static void leerFichero(BufferedReader br) throws IOException {
-        int linea;
+        String linea;
         int total = 0;
-
-        linea = (int) br.readLine();
+        // integer.parseint(linea) → esto me lo devuelve como entero 
+        linea = br.readLine();
+        
         while (linea != null) {
-            total = total + linea;
+            total = total + Integer.parseInt(linea);
             linea = br.readLine();
         }
 
-        System.out.println(total);
+        System.out.println("total: " + total);
     }
 
     public static void main(String[] args) {
