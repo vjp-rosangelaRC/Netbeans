@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-04-24T15:39:51.201Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="buRqQwKAfG-Uch6vq6ja" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-04-24T15:39:59.452Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="LH0UxN7b-NCMrZNL66E6" version="21.1.2" type="device">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1050" dy="629" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -188,7 +188,7 @@
           <mxGeometry x="590" y="560" width="120" height="115" as="geometry" />
         </mxCell>
         <mxCell id="xKWSQLoyTOIEdo6EzDQ5-41" value="Composición en caso de que el empleado forme parte de la compañía&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="430" y="430" width="170" height="20" as="geometry" />
+          <mxGeometry x="420" y="400" width="180" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
