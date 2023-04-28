@@ -165,6 +165,7 @@ public class T12E15 {
 
                 case 3: {
                     System.out.println("Saliendo... ");
+                    break;
                 }
 
                 default: {
