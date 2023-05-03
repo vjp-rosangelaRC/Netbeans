@@ -41,10 +41,9 @@ public class T12E16 {
         }
     }
 
-    public static void crearFichero(int[] primerosImp) {
+    public static void crearFichero(int[] primerosImp, String nombre) {
         Scanner entrada = new Scanner(System.in);
         DataOutputStream dos = null;
-        String nombre;
 
         System.out.println("¿Qué nombre quiere darle al fichero?");
         nombre = entrada.nextLine();
@@ -68,12 +67,15 @@ public class T12E16 {
         }
     }
     
-    public static void leeerFichero(DataInputStream dis) throws IOException, FileNotFoundException{
-       while (true){
+    public static void lectorFichero(DataInputStream dis) throws IOException, FileNotFoundException{
+        System.out.println("Números: ");
+        
+        while (true){
             System.out.println(dis.readInt());
        }
     }
     
+    /*No funciona lo de recibir nombre*/
     public static void leerFichero (String nombre){
         FileInputStream fis = null; 
         DataInputStream dis = null; 
@@ -81,7 +83,7 @@ public class T12E16 {
         try{
             fis = new FileInputStream(nombre); 
             dis = new DataInputStream(fis);
-            leeerFichero(dis);
+            lectorFichero(dis);
         } catch (FileNotFoundException e){
             System.out.println(e.getMessage());
         } catch (IOException e){
@@ -119,7 +121,7 @@ public class T12E16 {
 
             switch (opcion) {
                 case 1: {
-                    crearFichero(primerosImp);
+                    crearFichero(primerosImp, nombre);
                     break;
                 }
                 
@@ -143,7 +145,10 @@ public class T12E16 {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        menu(primerosImpares(), );
+        String nombre = "";
+        int[] primerosImp = primerosImpares(); 
+        
+        menu(primerosImp, nombre);
     }
 
 }

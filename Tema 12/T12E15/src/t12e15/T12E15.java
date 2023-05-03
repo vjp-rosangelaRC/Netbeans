@@ -104,7 +104,7 @@ public class T12E15 {
             }
             if (fis != null) {
                 try {
-                    dis.close();
+                    fis.close();
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
                 }
