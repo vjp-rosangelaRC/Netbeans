@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-04-28T16:03:48.170Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="39YDNFVzRRvMGZcd7VBW" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-04-28T16:04:04.910Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="AKLXwkD-sBTZejEICYtR" version="21.1.2" type="device">
   <diagram name="Página-1" id="Hc4uAjDOSzZKf6fAHVU8">
     <mxGraphModel dx="1036" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -21,9 +21,6 @@
         </mxCell>
         <mxCell id="Zw7e7EIyPkA-x-o7fJzw-3" value="Salir del encuentro" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="210" y="270" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="9dRPQJvyAAZghA8Qvqfq-1" value="&lt;br&gt;En cualquier momento un usuario puede consultar el estado del sistema, por ejemplo, los&amp;nbsp;encuentros planeados y su información.&lt;br&gt;Representa el enunciado anterior con un diagrama de casos de uso." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="29" y="830" width="770" height="130" as="geometry" />
         </mxCell>
         <mxCell id="9dRPQJvyAAZghA8Qvqfq-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9dRPQJvyAAZghA8Qvqfq-2">
           <mxGeometry relative="1" as="geometry">
