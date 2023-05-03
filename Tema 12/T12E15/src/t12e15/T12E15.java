@@ -92,7 +92,7 @@ public class T12E15 {
             leerFichero(dis);
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
-        } catch (IOException e) {
+        } catch (IOException e) { //Se controla el EEIO 
             System.out.println(e.getMessage());
         } finally {
             if (dis != null) {
@@ -112,7 +112,7 @@ public class T12E15 {
         }
     }
 
-    public static void leerFichero(DataInputStream dis) throws IOException, FileNotFoundException {
+    public static void leerFichero(DataInputStream dis) throws IOException, FileNotFoundException { // Aquí solo se controla el IOE 
         while (true) {
             System.out.println("Nombre: " + dis.readUTF());
             System.out.println("Edad: " + dis.readInt());

@@ -54,7 +54,7 @@ public class T12E16 {
             escribirFichero(dos, primerosImp);
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
-        } catch (IOException e) {
+        } catch (IOException e) { 
             System.out.println(e.getMessage());
         } finally {
             try {
@@ -86,7 +86,7 @@ public class T12E16 {
             lectorFichero(dis);
         } catch (FileNotFoundException e){
             System.out.println(e.getMessage());
-        } catch (IOException e){
+        } catch (IOException e){  // Es la EOFE
             System.out.println(e.getMessage());
         } finally {
             if (dis != null){
@@ -146,6 +146,8 @@ public class T12E16 {
     public static void main(String[] args) {
         // TODO code application logic here
         String nombre = "";
+        
+        /* PEdir el nombre antes de entrar en el menú */
         int[] primerosImp = primerosImpares(); 
         
         menu(primerosImp, nombre);
