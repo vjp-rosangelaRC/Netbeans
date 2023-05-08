@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-05-08T15:48:28.785Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="WHYbGJJUOwYzE5w6pjxf" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-05-08T15:48:39.001Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="LhwibMYMNgN7QY6vHfHb" version="21.1.2" type="device">
   <diagram name="Página-1" id="bImNXlKZqYxLvEkbQghu">
     <mxGraphModel dx="1381" dy="819" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -282,7 +282,7 @@
           <mxGeometry x="80" y="1010" width="70" height="50" as="geometry" />
         </mxCell>
         <mxCell id="8WbfdoTXyHr1HbjRjnSn-5" value="Aquí iría el inquilino, que además puede alquilar y desalquilar&amp;nbsp;" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="720" y="800" width="80" height="40" as="geometry" />
+          <mxGeometry x="610" y="780" width="190" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
