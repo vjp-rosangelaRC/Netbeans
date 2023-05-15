@@ -36,6 +36,11 @@ public class T12E21{
         return nota;
     }
 
+    /* Este método debería ser privado siempre, porque solo se debería poder 
+    pasar por él desde el método escribir 
+    También lo ideal sería crear un vector para ir dando los nombres a cada 
+    asignatura y recorrerlo con un for 
+    */
     public static void escribirFichero(ObjectOutputStream oos) throws IOException {
         System.out.println("Por favor, introduzca la nota de Programación");
 
@@ -129,12 +134,24 @@ public class T12E21{
         }
     }
 
+    // Este también debería ser privado, por la misma razón que el anterior 
     public static void leerFichero(ObjectInputStream ois) throws IOException, ClassNotFoundException {
         Asignatura aux;
         float suma = 0;
 
         System.out.println("Leyendo el fichero y calculando la media ...");
 
+        /*En este caso funciona pero en caso de no saber cuántos hay hacemos un 
+        while true para que lea el objeto de tipo asignatura
+        Con un método en asignatura metemos el total para ir sumando. No podemos 
+        hacer la suma fuera del bucle porque esa parte del código nunca se va 
+        a ejecutar porque salta el error y nunca se ejecuta lo que esté debajo.
+        Para ir actualizando la parte de la suma se usa un atributo estático, que 
+        pertenecen a la clase, no a los objetos. Creamos un método para actualizar
+        el atributo estático. Me da igual que se genere la excepción porque tengo
+        la suma en mi atributo estático. En el catch de EOFExeption mostramos 
+        ya nota media diviendo esta suma entre 6. Los métodos que trabajan con 
+        los atributos estáticos son también estáticos */
         while (true) {
             aux = (Asignatura) ois.readObject();
             suma = suma + aux.getNota();
