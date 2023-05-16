@@ -42,15 +42,24 @@ public class T12E22 {
         Asignatura[] asignaturas = new Asignatura[6]; 
         
         /*El error está aquí arriba en lo de la creación de asignatura */
-        String[] nombresAsignaturas = new String[]{"Programación", "LMSGI", "BBDD", "ED", "SI", "FOL"};
+        //String[] nombresAsignaturas = new String[]{"Programación", "LMSGI", "BBDD", "ED", "SI", "FOL"};
         
+        for (int i = 0; i < asignaturas.length; i++) {
+            asignaturas[i] = new Asignatura(); 
+            asignaturas[i].setNombre("a");
+            asignaturas[i].setNota(10);
+        }
+        System.out.println(asignaturas[1].getNombre());
+            
+        }
         
+       /* 
         asignaturas[1].setNombre("aa");
         asignaturas[1].setNota(1);
         System.out.println(asignaturas[1].getNombre());
         //pedirNotas(asignaturas, nombresAsignaturas);
-        //mostrarNotas(asignaturas, nombresAsignaturas);
+        //mostrarNotas(asignaturas, nombresAsignaturas);*/
         
-    }
+    
     
 }
