@@ -5,11 +5,13 @@
  */
 package t12e24;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Ross
  */
-public class Empleado {
+public class Empleado implements Serializable{
 
     private String nombre;
     private int numeroHoras;
