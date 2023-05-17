@@ -134,24 +134,32 @@ public class T12E26 {
                 System.out.println(bebida.toString());
             }
         } catch (EOFException e) {
-            // Fin de la lista
             System.out.println("Fin de la lista (●'◡'●)");
         }
     }
 
     public static void comprar(ArrayList<Bebida> arrayBebidas, File fichero) {
-        int posicion;
-        boolean salir = false;
+        int cantidad;
+        float total = 0;
         String compra;
 
-        System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
+        System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)"); 
         compra = pedirS();
 
-        if (arrayBebidas.contains(compra)) { //no funciona esta parte
+        if (!arrayBebidas.isEmpty()) {
             for (int i = 0; i < arrayBebidas.size(); i++) {
                 if (arrayBebidas.get(i).getNombreBebida().equalsIgnoreCase(compra)) {
-                    posicion = i;
-                    //actualizarStock(posicion);
+                    System.out.println("¿Qué cantidad quiere?");
+                    cantidad = pedirN();
+
+                    if (arrayBebidas.get(i).getStock() <= cantidad) {
+                        System.out.println("No hay suficiente stock");
+                    } else {
+                        arrayBebidas.get(i).setStock(arrayBebidas.get(i).getStock() - cantidad);
+                        total = arrayBebidas.get(i).getPrecio() * cantidad;
+                                               
+                        System.out.println("Su total es " + total);
+                    }
                 }
             }
         } else {
@@ -161,22 +169,67 @@ public class T12E26 {
             compra = pedirS();
 
             if (compra.equalsIgnoreCase("si")) {
-                while (!arrayBebidas.contains(compra)) {
-                    System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
-                    compra = pedirS();
-                }
+                /*while (!arrayBebidas.contains(compra)) { Esta parte no */
+                System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
+                compra = pedirS();
+                //}
             }
-
         }
     }
 
-    /*public void actualizarStock(int n, ArrayList<Bebida> arrayBebidas) {
-        if (n > stock) {
-            System.out.println("No hay suficiente stock");
-        } else {
-            setStock((this.stock - n));
+    private static void reanhadirBebidas(ObjectOutputStream oos, ArrayList<Bebida> arrayBebidas) throws IOException {
+        String nombre = "";
+        float precio = 0;
+        int stock = 1;
+
+        for (int i = 0; i < arrayBebidas.size(); i++) {
+            nombre = arrayBebidas.get(i).getNombreBebida();
+            precio = arrayBebidas.get(i).getPrecio();
+            stock = arrayBebidas.get(i).getStock();
         }
-    }*/
+
+        Bebida bebidas = new Bebida(nombre, precio, stock);
+
+        oos.writeObject(bebidas);
+        arrayBebidas.add(bebidas);
+    }
+
+    public static void reescribir(File fichero, ArrayList<Bebida> arrayBebidas) {
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+
+        try {
+            if (!fichero.exists()) {
+                fos = new FileOutputStream(fichero, true);
+                oos = new ObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(fichero, true);
+                oos = new MiObjectOutputStream(fos);
+            }
+            reanhadirBebidas(oos, arrayBebidas);
+        } catch (FileNotFoundException e) {
+            System.out.println("Error");
+        } catch (IOException e) {
+            //System.out.println("Stock actualizado");
+        } finally {
+            if (oos != null) {
+                try {
+                    oos.close();
+                } catch (IOException e) {
+                    System.out.println("Error");
+                }
+            }
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    System.out.println("Error");
+                }
+            }
+            //System.out.println("☆*: .｡. Datos introducidos correctamente .｡.:*☆☆*");
+        }
+    }
+
     public static void menu(File fichero, ArrayList<Bebida> arrayBebidas) {
         int opcion;
         String respuesta;
@@ -198,7 +251,6 @@ public class T12E26 {
                         System.out.println("¿Quiere introducir otro producto?");
                         respuesta = pedirS();
                     }
-
                     break;
                 }
 
@@ -208,11 +260,11 @@ public class T12E26 {
                     if (fichero.exists()) {
                         comprar(arrayBebidas, fichero);
                     }
-
                     break;
                 }
 
                 case 3: {
+                    //reescribir(fichero, arrayBebidas);
                     System.out.println("Saliendo... ");
                     break;
                 }
@@ -228,7 +280,12 @@ public class T12E26 {
         // TODO code application logic here
         File fichero = new File("bebidas.obj");
         ArrayList<Bebida> arrayBebidas = new ArrayList<>();
-
+        
+        // Cada vez que se vuelve a ejecutar el programa tengo que escribir en el array
+        // el reescribir no funciona → tengo que borrarlo e introducir la información del arrayList
+        // línea 172 while Hay alguna manera de comprobar el contenido de una lista sin entrar en el bucle? 
+        /* En este ejercicio no quiero respetar la cabecera (reescribo todo), 
+        así que no hace falta el miObjectOutputStream */
         menu(fichero, arrayBebidas);
     }
 
