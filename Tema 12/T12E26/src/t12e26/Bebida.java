@@ -52,13 +52,11 @@ public class Bebida implements Serializable{
         this.stock = stock;
     }
     
-    public void actualizarStock(int n){
-        setStock((this.stock - n));
-    }
+    
 
     @Override
     public String toString() {
-        return nombreBebida + "\n precio:" + precio + "€ \n Stock:" + stock;
+        return "☆" + nombreBebida + "\n precio:" + precio + "€ \n Stock:" + stock;
     }   
     
 }

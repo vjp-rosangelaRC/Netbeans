@@ -13,6 +13,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -36,7 +37,7 @@ public class T12E26 {
         return s;
     }
 
-    private static void anhadirBebidas(ObjectOutputStream oos) throws IOException {
+    private static void anhadirBebidas(ObjectOutputStream oos, ArrayList<Bebida> arrayBebidas) throws IOException {
         String nombre;
         float precio;
         int stock;
@@ -53,9 +54,10 @@ public class T12E26 {
         Bebida bebidas = new Bebida(nombre, precio, stock);
 
         oos.writeObject(bebidas);
+        arrayBebidas.add(bebidas);
     }
 
-    public static void escribir(File fichero) {
+    public static void escribir(File fichero, ArrayList<Bebida> arrayBebidas) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
 
@@ -67,7 +69,7 @@ public class T12E26 {
                 fos = new FileOutputStream(fichero, true);
                 oos = new MiObjectOutputStream(fos);
             }
-            anhadirBebidas(oos);
+            anhadirBebidas(oos, arrayBebidas);
         } catch (FileNotFoundException e) {
             System.out.println("Error");
         } catch (IOException e) {
@@ -87,25 +89,26 @@ public class T12E26 {
                     System.out.println("Error");
                 }
             }
+            System.out.println("☆*: .｡. Datos introducidos correctamente .｡.:*☆☆*");
         }
     }
 
-    public static void leer() {
+    public static void leer(File fichero, ArrayList<Bebida> arrayBebidas) {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
 
         try {
-            fis = new FileInputStream("bebidas.obj");
+            fis = new FileInputStream(fichero);
             ois = new ObjectInputStream(fis);
             mostrarBebidas(ois);
         } catch (FileNotFoundException e) {
-            System.out.println("Error");
+            System.out.println("No hay ningún producto en stock ＞︿＜ ");
         } catch (ClassNotFoundException e) {
-            System.out.println("Error");
+            System.out.println("Error ");
         } catch (EOFException e) {
             System.out.println("Fin de la lista (●'◡'●)");
         } catch (IOException e) {
-            System.out.println("Fin ");
+            System.out.println("No hay ningún producto en stock ＞︿＜ ");
         } finally {
             if (ois != null) {
                 try {
@@ -125,18 +128,57 @@ public class T12E26 {
     }
 
     private static void mostrarBebidas(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        Bebida bebidas = new Bebida();
+    try {
         while (true) {
-            bebidas = (Bebida) ois.readObject();
-            System.out.println(bebidas.toString());
+            Bebida bebida = (Bebida) ois.readObject();
+            System.out.println(bebida.toString());
+        }
+    } catch (EOFException e) {
+        // Fin de la lista
+        System.out.println("Fin de la lista (●'◡'●)");
+    }
+}
+
+
+    public static void comprar(ArrayList<Bebida> arrayBebidas, File fichero) {
+        int posicion;
+        String compra;
+
+        System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
+        compra = pedirS();
+
+        if (arrayBebidas.contains(compra)) {
+            for (int i = 0; i < arrayBebidas.size(); i++) {
+                if (arrayBebidas.get(i).getNombreBebida().equalsIgnoreCase(compra)) {
+                    posicion = i;
+                    //actualizarStock(posicion);
+                }
+            }
+        } else {
+            System.out.println("No hay stock de esta bebida (；′⌒`). Por favor, seleccione una de las bebidas disponibles");
+            leer(fichero, arrayBebidas);
+            System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
+            compra = pedirS();
+
+            while (!arrayBebidas.contains(compra)) {
+                System.out.println("No hay stock de esta bebida (；′⌒`). Por favor, seleccione una de las bebidas disponibles");
+                leer(fichero, arrayBebidas);
+                System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
+                compra = pedirS();
+            }
+
         }
     }
-    
-    public static void comprar(){
-        
-    }
 
-    public static void menu(File fichero) {
+    /*public void actualizarStock(int n, ArrayList<Bebida> arrayBebidas) {
+        if (n > stock) {
+            System.out.println("No hay suficiente stock");
+        } else {
+            setStock((this.stock - n));
+        }
+    }*/
+
+    public static void menu(File fichero, ArrayList<Bebida> arrayBebidas) {
         int opcion;
         String respuesta;
         do {
@@ -149,25 +191,24 @@ public class T12E26 {
             switch (opcion) {
 
                 case 1: {
-                    escribir(fichero);
+                    escribir(fichero, arrayBebidas);
                     System.out.println("¿Quiere introducir otro producto?");
                     respuesta = pedirS();
                     while (respuesta.equalsIgnoreCase("si")) {
-                        escribir(fichero);
+                        escribir(fichero, arrayBebidas);
                         System.out.println("¿Quiere introducir otro producto?");
                         respuesta = pedirS();
                     }
-                    System.out.println("☆*: .｡. Datos introducidos correctamente .｡.:*☆☆*");
+
                     break;
                 }
 
                 case 2: {
                     System.out.println("==== BEBIDAS DISPONIBLES ====");
-                    leer();
-                    
-                    System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
-                    comprar();
-                    
+                    leer(fichero, arrayBebidas);
+
+                    //comprar(arrayBebidas, fichero);
+
                     break;
                 }
 
@@ -186,7 +227,9 @@ public class T12E26 {
     public static void main(String[] args) {
         // TODO code application logic here
         File fichero = new File("bebidas.obj");
-        menu(fichero);
+        ArrayList<Bebida> arrayBebidas = new ArrayList<>();
+
+        menu(fichero, arrayBebidas);
     }
 
 }
