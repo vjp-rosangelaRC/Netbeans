@@ -128,26 +128,26 @@ public class T12E26 {
     }
 
     private static void mostrarBebidas(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-    try {
-        while (true) {
-            Bebida bebida = (Bebida) ois.readObject();
-            System.out.println(bebida.toString());
+        try {
+            while (true) {
+                Bebida bebida = (Bebida) ois.readObject();
+                System.out.println(bebida.toString());
+            }
+        } catch (EOFException e) {
+            // Fin de la lista
+            System.out.println("Fin de la lista (●'◡'●)");
         }
-    } catch (EOFException e) {
-        // Fin de la lista
-        System.out.println("Fin de la lista (●'◡'●)");
     }
-}
-
 
     public static void comprar(ArrayList<Bebida> arrayBebidas, File fichero) {
         int posicion;
+        boolean salir = false;
         String compra;
 
         System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
         compra = pedirS();
 
-        if (arrayBebidas.contains(compra)) {
+        if (arrayBebidas.contains(compra)) { //no funciona esta parte
             for (int i = 0; i < arrayBebidas.size(); i++) {
                 if (arrayBebidas.get(i).getNombreBebida().equalsIgnoreCase(compra)) {
                     posicion = i;
@@ -157,14 +157,14 @@ public class T12E26 {
         } else {
             System.out.println("No hay stock de esta bebida (；′⌒`). Por favor, seleccione una de las bebidas disponibles");
             leer(fichero, arrayBebidas);
-            System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
+            System.out.println("¿Quiere comprar alguna de las bebidas disponibles?");
             compra = pedirS();
 
-            while (!arrayBebidas.contains(compra)) {
-                System.out.println("No hay stock de esta bebida (；′⌒`). Por favor, seleccione una de las bebidas disponibles");
-                leer(fichero, arrayBebidas);
-                System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
-                compra = pedirS();
+            if (compra.equalsIgnoreCase("si")) {
+                while (!arrayBebidas.contains(compra)) {
+                    System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
+                    compra = pedirS();
+                }
             }
 
         }
@@ -177,14 +177,13 @@ public class T12E26 {
             setStock((this.stock - n));
         }
     }*/
-
     public static void menu(File fichero, ArrayList<Bebida> arrayBebidas) {
         int opcion;
         String respuesta;
         do {
             System.out.println(" ======= M  E   N   Ú =======");
-            System.out.println("Introducir una bebida");
-            System.out.println("Comprar producto");
+            System.out.println("1. Introducir una bebida");
+            System.out.println("2. Comprar producto");
             System.out.println("Salir");
             opcion = pedirN();
 
@@ -206,8 +205,9 @@ public class T12E26 {
                 case 2: {
                     System.out.println("==== BEBIDAS DISPONIBLES ====");
                     leer(fichero, arrayBebidas);
-
-                    //comprar(arrayBebidas, fichero);
+                    if (fichero.exists()) {
+                        comprar(arrayBebidas, fichero);
+                    }
 
                     break;
                 }
