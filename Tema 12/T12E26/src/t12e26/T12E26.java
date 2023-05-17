@@ -37,7 +37,7 @@ public class T12E26 {
         return s;
     }
 
-    private static void anhadirBebidas(ObjectOutputStream oos, ArrayList<Bebida> arrayBebidas) throws IOException {
+    public static Bebida pedirBebida() {
         String nombre;
         float precio;
         int stock;
@@ -53,8 +53,15 @@ public class T12E26 {
 
         Bebida bebidas = new Bebida(nombre, precio, stock);
 
-        oos.writeObject(bebidas);
-        arrayBebidas.add(bebidas);
+        return bebidas;
+    }
+
+    private static void anhadirBebidas(ObjectOutputStream oos, ArrayList<Bebida> arrayBebidas) throws IOException {
+        // Este método tiene que añadir el contenido del fichero en el array y escribir el fichero 
+
+        for (int i = 0; i < arrayBebidas.size(); i++) {
+            oos.arrayBebidas.add();
+        }
     }
 
     public static void escribir(File fichero, ArrayList<Bebida> arrayBebidas) {
@@ -62,13 +69,8 @@ public class T12E26 {
         ObjectOutputStream oos = null;
 
         try {
-            if (!fichero.exists()) {
-                fos = new FileOutputStream(fichero, true);
-                oos = new ObjectOutputStream(fos);
-            } else {
-                fos = new FileOutputStream(fichero, true);
-                oos = new MiObjectOutputStream(fos);
-            }
+            fos = new FileOutputStream(fichero);
+            oos = new ObjectOutputStream(fos);
             anhadirBebidas(oos, arrayBebidas);
         } catch (FileNotFoundException e) {
             System.out.println("Error");
@@ -127,39 +129,39 @@ public class T12E26 {
         }
     }
 
-    private static void mostrarBebidas(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        try {
-            while (true) {
-                Bebida bebida = (Bebida) ois.readObject();
-                System.out.println(bebida.toString());
-            }
-        } catch (EOFException e) {
-            System.out.println("Fin de la lista (●'◡'●)");
+    private static void mostrarBebidas(ObjectInputStream ois) throws IOException, ClassNotFoundException, EOFException {
+        Bebida bebida;
+        while (true) {
+            bebida = (Bebida) ois.readObject();
+
         }
+
     }
 
     public static void comprar(ArrayList<Bebida> arrayBebidas, File fichero) {
-        int cantidad;
+        int cantidad, i = 0;
         float total = 0;
         String compra;
 
-        System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)"); 
+        System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
         compra = pedirS();
 
         if (!arrayBebidas.isEmpty()) {
-            for (int i = 0; i < arrayBebidas.size(); i++) {
+            while (arrayBebidas.size() > i) {
                 if (arrayBebidas.get(i).getNombreBebida().equalsIgnoreCase(compra)) {
                     System.out.println("¿Qué cantidad quiere?");
                     cantidad = pedirN();
 
-                    if (arrayBebidas.get(i).getStock() <= cantidad) {
-                        System.out.println("No hay suficiente stock");
-                    } else {
-                        arrayBebidas.get(i).setStock(arrayBebidas.get(i).getStock() - cantidad);
+                    if (arrayBebidas.get(i).getStock() >= cantidad) {
+                       arrayBebidas.get(i).setStock(arrayBebidas.get(i).getStock() - cantidad);
                         total = arrayBebidas.get(i).getPrecio() * cantidad;
-                                               
+
                         System.out.println("Su total es " + total);
+                    } else { 
+                        System.out.println("No hay suficiente stock");
                     }
+                } else {
+                    i++;
                 }
             }
         } else {
@@ -167,7 +169,6 @@ public class T12E26 {
             leer(fichero, arrayBebidas);
             System.out.println("¿Quiere comprar alguna de las bebidas disponibles?");
             compra = pedirS();
-
             if (compra.equalsIgnoreCase("si")) {
                 /*while (!arrayBebidas.contains(compra)) { Esta parte no */
                 System.out.println("¿Qué bebida quiere comprar? (❁´◡`❁)");
@@ -177,7 +178,7 @@ public class T12E26 {
         }
     }
 
-    private static void reanhadirBebidas(ObjectOutputStream oos, ArrayList<Bebida> arrayBebidas) throws IOException {
+    /* private static void reanhadirBebidas(ObjectOutputStream oos, ArrayList<Bebida> arrayBebidas) throws IOException {
         String nombre = "";
         float precio = 0;
         int stock = 1;
@@ -228,8 +229,7 @@ public class T12E26 {
             }
             //System.out.println("☆*: .｡. Datos introducidos correctamente .｡.:*☆☆*");
         }
-    }
-
+    }*/
     public static void menu(File fichero, ArrayList<Bebida> arrayBebidas) {
         int opcion;
         String respuesta;
@@ -280,13 +280,18 @@ public class T12E26 {
         // TODO code application logic here
         File fichero = new File("bebidas.obj");
         ArrayList<Bebida> arrayBebidas = new ArrayList<>();
-        
+        //Acabar el método que lee el arrayList arriba, el mostrar
+        // Cambiar el bucle for en la búsqueda por un while
+
+        cargarDatos(); //Leer fichero e ir añadiendo cada bebida al arrayList
+
         // Cada vez que se vuelve a ejecutar el programa tengo que escribir en el array
         // el reescribir no funciona → tengo que borrarlo e introducir la información del arrayList
         // línea 172 while Hay alguna manera de comprobar el contenido de una lista sin entrar en el bucle? 
         /* En este ejercicio no quiero respetar la cabecera (reescribo todo), 
         así que no hace falta el miObjectOutputStream */
         menu(fichero, arrayBebidas);
+        volcarListaAFichero();  //Recorrer la lista e ir escribiendo cada bebida de la lista en el fichero
     }
 
 }
