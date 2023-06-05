@@ -7,53 +7,54 @@ package t06e10;
 
 /**
  *
- * @author rdlrosac01
+ * @author Ross
  */
 public class T06E10 {
 
     /**
      * @param args the command line arguments
      */
-    public static void rellenarVector(int[] array){
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) Math.floor(Math.random()*8+1);
+    public static int generarAleatorio(){
+        int n = (int) Math.floor(Math.random() * 8 + 1);
+        return n;
+    }
+    
+    public static void rellenarVector(int[] vector){
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] = generarAleatorio(); 
         }
     }
     
-    public static void mostrarVector(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+    public static void mostrarVector(int[] vector){
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println(vector[i]);
         }
     }
     
-    public static boolean buscarRepetido(int[] array, int numero, int posicion){
-        boolean encontrado; 
-        encontrado = false;
-        int i = posicion; 
+    public static boolean buscarRepetidos(int[] vector, int num){
+        boolean encontrado = false; 
+        int posicion, i = 0; 
         
-        while ((i < array.length) && !encontrado){
-            if(array[i] == numero){
+        while(!encontrado && i < vector.length ){
+            if(vector[i] == num){
                 encontrado = true; 
             }
             i++;
         }
-        
-        return encontrado;
+        return encontrado; 
     }
     
-    public static void sustituirPorCero (int[] array){
-        int numero; 
-        boolean repetido;
-       
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] != 0){
-                numero = array[i];
-                repetido = buscarRepetido(array, numero, i+1);
-                if (repetido){
-                    for (int j = i; j < array.length; j++) {
-                        if (array[j] == numero){
-                            array[j] = 0;
-                           
+    
+    public static void sustituirPorCero(int[] vector){
+        int n; 
+        for (int i = 0; i < vector.length; i++) {
+            if(vector[i] != 0){
+                n = vector[i]; 
+
+                if(buscarRepetidos(vector, n)){
+                    for (int j = i+1; j < vector.length; j++) {
+                        if(vector[j] == n){
+                            vector[j] = 0; 
                         }
                     }
                 }
@@ -63,16 +64,13 @@ public class T06E10 {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        int[] array = new int[10];
-        
-        rellenarVector(array);
-        System.out.println("Vector rellenado");
-        mostrarVector(array);
-        
-        System.out.println("Sustituyendo...");
-        sustituirPorCero(array);
-        mostrarVector(array);
-        
+        int[] vector = new int[10]; 
+        rellenarVector(vector);
+        System.out.println("Mostrar");
+        mostrarVector(vector);
+        System.out.println("Sustituir");
+        sustituirPorCero(vector);
+        mostrarVector(vector);
     }
     
 }

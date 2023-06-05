@@ -7,49 +7,62 @@ package t06e11;
 
 /**
  *
- * @author rdlrosac01
+ * @author Ross
  */
 public class T06E11 {
 
     /**
      * @param args the command line arguments
      */
-    public static void rellenarArray(int[] array) {
-        
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+    public static int generarAleatorio() {
+        int n = (int) Math.floor(Math.random() * 10);
+        return n;
+    }
+
+    public static void inicializarVector(int[] vector) {
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] = -1;
+        }
+    }
+
+    public static void rellenarVector(int[] vector) {
+        int n;
+        boolean repetido;
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i] == -1) {
                 do {
-                    array[i] = (int) Math.floor(Math.random() * 10);
-                }while (esRepetido(array, j));
-                
+                    n = generarAleatorio();
+                    repetido = repetido(vector, n);
+                } while (repetido);
+                vector[i] = n;
             }
         }
     }
-    
-    public static boolean esRepetido(int[] array, int numero){
-        int i = 0; 
-        boolean encontrado = false; 
-        while (i < array.length  && !encontrado){
-            if (array[i] == numero ){
+
+    public static void mostrarVector(int[] vector) {
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println(vector[i]);
+        }
+    }
+
+    public static boolean repetido(int[] vector, int n) {
+        boolean encontrado = false;
+        int i = 0;
+        while (i < vector.length && !encontrado) {
+            if (vector[i] == n) {
                 encontrado = true;
             }
             i++;
         }
         return encontrado;
     }
-    
-    public static void mostrarArray(int[] array){
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
-        }
-    }
-    
+
     public static void main(String[] args) {
         // TODO code application logic here
-        int[] array = new int[10];
-        
-        rellenarArray(array);
-        mostrarArray(array);
+        int[] vector = new int[10];
+        inicializarVector(vector);
+        rellenarVector(vector);
+        mostrarVector(vector);
     }
-    
+
 }
