@@ -20,30 +20,41 @@ public class T06EA01 {
     public static int pedirN() {
         Scanner entrada = new Scanner(System.in);
         int n = -1;
-        do {
-            try {
-                n = entrada.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("No valido");
-                n = entrada.nextInt();
-            } finally {
-                return n;
-            }
-        } while (n >= 1 || n <= 10);
+
+        try {
+            n = entrada.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("No valido");
+            n = -1;
+        }
+        return n;
+
     }
 
     public static void llenarVector(int[] vector) {
-
+        int n; 
         for (int i = 0; i < vector.length; i++) {
-            vector[i] = pedirN();
+            do{
+                n = pedirN();
+            }while (n < 1 || n > 10);
+            
+            vector[i] = n; 
         }
 
+    }
+
+    public static void mostrarVector(int[] vector) {
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println(vector[i]);
+        }
     }
 
     public static void main(String[] args) {
         // TODO code application logic here
         int[] vector = new int[10];
-
+        System.out.println("Llenar");
+        llenarVector(vector);
+        mostrarVector(vector);
     }
 
 }
